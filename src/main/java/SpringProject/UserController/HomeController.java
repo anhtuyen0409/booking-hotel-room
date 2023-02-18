@@ -12,4 +12,10 @@ public class HomeController {
 		ModelAndView mv = new ModelAndView("user/index");
 		return mv;
 	}
+	
+	@RequestMapping(value = "/rooms")
+	public ModelAndView Rooms() {
+		ModelAndView mv = new ModelAndView("user/rooms");
+		return mv;
+	}
 }
