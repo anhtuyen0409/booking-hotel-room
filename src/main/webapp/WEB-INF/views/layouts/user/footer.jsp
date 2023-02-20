@@ -28,11 +28,11 @@
 				</div>
 				<div class="col-lg-3 offset-lg-1">
 					<div class="ft-contact">
-						<h6>Contact Us</h6>
+						<h6>Liên hệ chúng tôi</h6>
 						<ul>
-							<li>(12) 345 67890</li>
-							<li>info.colorlib@gmail.com</li>
-							<li>856 Cordia Extension Apt. 356, Lake, United State</li>
+							<li>039 442 0076</li>
+							<li>nguyenanhtuyen10a5@gmail.com</li>
+							<li>15c Tân Hoà 2 - Hiệp Phú - Q9</li>
 						</ul>
 					</div>
 				</div>

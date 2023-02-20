@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<title>TMTrip - Đặt phòng khách sạn giá rẻ</title>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<title>TM Luxury - Đặt phòng khách sạn giá rẻ</title>
 <body>
 
 	<!-- Hero Section Begin -->
@@ -11,16 +11,16 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="hero-text">
-					
-					<c:forEach var="item" items="${slides }" varStatus="index">
-					<c:if test="${index.first }">
-						<h1>${item.caption }</h1>
-						<p>${item.content }</p>
-					</c:if>
-					
-						
-					</c:forEach>
-							
+
+						<c:forEach var="item" items="${slides }" varStatus="index">
+							<c:if test="${index.first }">
+								<h1>${item.caption }</h1>
+								<p>${item.content }</p>
+							</c:if>
+
+
+						</c:forEach>
+
 						<a href="#" class="primary-btn">Discover Now</a>
 					</div>
 				</div>
@@ -39,15 +39,20 @@
 									class="icon_calendar"></i>
 							</div>
 							<div class="select-option">
-								<label for="guest">Guests:</label> <select id="guest">
-									<option value="">2 Adults</option>
-									<option value="">3 Adults</option>
+								<label for="guest">Type Room:</label> <select id="guest">
+
+									<c:forEach var="item" items="${typeRoom }">
+										<option value="">${item.name }</option>
+									</c:forEach>
+
 								</select>
 							</div>
 							<div class="select-option">
-								<label for="room">Room:</label> <select id="room">
-									<option value="">1 Room</option>
-									<option value="">2 Room</option>
+								<label for="room">Guests:</label> <select id="room">
+									<option value="">1</option>
+									<option value="">2</option>
+									<option value="">3</option>
+									<option value="">4</option>
 								</select>
 							</div>
 							<button type="submit">Check Availability</button>
@@ -57,12 +62,12 @@
 			</div>
 		</div>
 		<div class="hero-slider owl-carousel">
-			
+
 			<c:forEach var="item" items="${slides }">
-						<div class="hs-item set-bg"
-				data-setbg="<c:url value="/assets/user/img/hero/${item.img }"/>"></div>
+				<div class="hs-item set-bg"
+					data-setbg="<c:url value="/assets/user/img/hero/${item.img }"/>"></div>
 			</c:forEach>
-		
+
 		</div>
 	</section>
 	<!-- Hero Section End -->
@@ -74,19 +79,18 @@
 				<div class="col-lg-6">
 					<div class="about-text">
 						<div class="section-title">
-							<span>About Us</span>
-							<h2>
-								Intercontinental LA <br />Westlake Hotel
-							</h2>
+
+							<h2>GIỚI THIỆU TM LUXURY - QUY NHON</h2>
 						</div>
-						<p class="f-para">Sona.com is a leading online accommodation
-							site. We’re passionate about travel. Every day, we inspire and
-							reach millions of travelers across 90 local websites in 41
-							languages.</p>
-						<p class="s-para">So when it comes to booking the perfect
-							hotel, vacation rental, resort, apartment, guest house, or tree
-							house, we’ve got you covered.</p>
-						<a href="#" class="primary-btn about-btn">Read More</a>
+						<p class="f-para">TM Luxury Quy Nhơn – nơi bạn có những trải
+							nghiệm chan hoà cùng thiên nhiên và cân bằng cho cuộc sống. Là
+							nơi bình yên và thư thái dành cho bạn và gia đình.</p>
+						<p class="s-para">TM Luxury Quy Nhơn tạo dựng các khu nghỉ
+							dưỡng và khách sạn hướng biển với dấu ấn đặc trưng toàn diện, từ
+							khâu lên ý tưởng, thiết kế, xây dựng, quản lý đến vận hành thông
+							qua ý tưởng độc đáo kết hợp giữa nghỉ dưỡng và chăm sóc sức khoẻ,
+							thuận tiện mọi lúc mọi nơi.</p>
+						<a href="#" class="primary-btn about-btn">Xem thêm</a>
 					</div>
 				</div>
 				<!-- <c:url value="/assets/user/img/flag.jpg"/> img/about/about-1.jpg-->

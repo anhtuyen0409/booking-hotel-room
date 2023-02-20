@@ -14,7 +14,6 @@
 	<div class="search-icon  search-switch">
 		<i class="icon_search"></i>
 	</div>
-	<!-- img/flag.jpg -->
 	<div class="header-configure-area">
 		<div class="language-option">
 			<img src="<c:url value="/assets/user/img/flag.jpg"/>" alt=""> <span>EN
@@ -31,18 +30,17 @@
 	</div>
 	<nav class="mainmenu mobile-menu">
 		<ul>
-			<li class="active"><a href="./index.html">Home</a></li>
-			<li><a href="./rooms.html">Rooms</a></li>
-			<li><a href="./about-us.html">About Us</a></li>
-			<li><a href="./pages.html">Pages</a>
+			<li class="active"><a href="./index.html">Trang chủ</a></li>
+			<li><a href="./about-us.html">Về chúng tôi</a></li>
+			<li><a href="./rooms.html">Phòng nghỉ</a>
 				<ul class="dropdown">
-					<li><a href="./room-details.html">Room Details</a></li>
-					<li><a href="#">Deluxe Room</a></li>
-					<li><a href="#">Family Room</a></li>
-					<li><a href="#">Premium Room</a></li>
+					<li><a href="./room-details.html"></a></li>
+					<li><a href="#">Normal</a></li>
+					<li><a href="#">Vip</a></li>
+					<li><a href="#">Homestay</a></li>
 				</ul></li>
-			<li><a href="./blog.html">News</a></li>
-			<li><a href="./contact.html">Contact</a></li>
+			<li><a href="./blog.html">Tin tức</a></li>
+			<li><a href="./contact.html">Liên hệ</a></li>
 		</ul>
 	</nav>
 	<div id="mobile-menu-wrap"></div>
@@ -53,8 +51,8 @@
 			class="fa fa-instagram"></i></a>
 	</div>
 	<ul class="top-widget">
-		<li><i class="fa fa-phone"></i> (12) 345 67890</li>
-		<li><i class="fa fa-envelope"></i> info.colorlib@gmail.com</li>
+		<li><i class="fa fa-phone"></i> 039 442 0076</li>
+		<li><i class="fa fa-envelope"></i> nguyenanhtuyen10a5@gmail.com</li>
 	</ul>
 </div>
 <!-- Offcanvas Menu Section End -->
@@ -64,13 +62,14 @@
 	<div class="top-nav">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-5">
 					<ul class="tn-left">
-						<li><i class="fa fa-phone"></i> (12) 345 67890</li>
-						<li><i class="fa fa-envelope"></i> info.colorlib@gmail.com</li>
+						<li><i class="fa fa-phone"></i> 039 442 0076</li>
+						<li><i class="fa fa-envelope"></i>
+							nguyenanhtuyen10a5@gmail.com</li>
 					</ul>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-4">
 					<div class="tn-right">
 						<div class="top-social">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
@@ -78,16 +77,21 @@
 								class="fa fa-tripadvisor"></i></a> <a href="#"><i
 								class="fa fa-instagram"></i></a>
 						</div>
-						<a href="#" class="bk-btn">Booking Now</a>
-						<div class="language-option">
-							<!-- <c:url value="/assets/user/img/flag.jpg"/> img/flag.jpg-->
-							<img src="<c:url value="/assets/user/img/flag.jpg"/>" alt="">
-							<span>EN <i class="fa fa-angle-down"></i></span>
-							<div class="flag-dropdown">
-								<ul>
-									<li><a href="#">Zi</a></li>
-									<li><a href="#">Fr</a></li>
-								</ul>
+						<a href="#" class="bk-btn">Đặt phòng ngay</a>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="menu-item">
+						<div class="container">
+							<div class="row">
+								<div class="nav-menu">
+									<nav class="mainmenu">
+										<ul>
+											<li><a href="./index.html">Đăng nhập</a></li>
+											<li><a href="./about-us.html">Đăng ký</a></li>
+										</ul>
+									</nav>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -101,7 +105,7 @@
 				<div class="col-lg-2">
 					<div class="logo">
 						<a href="./index.html"> <img
-							src="<c:url value="/assets/user/img/logo.png"/>" alt="">
+							src="<c:url value="/assets/user/img/logo3.png"/>" alt="">
 						</a>
 					</div>
 				</div>
@@ -109,18 +113,16 @@
 					<div class="nav-menu">
 						<nav class="mainmenu">
 							<ul>
-								<li class="active"><a href="./index.html">Home</a></li>
-								<li><a href="./rooms.html">Rooms</a></li>
-								<li><a href="./about-us.html">About Us</a></li>
-								<li><a href="./pages.html">Pages</a>
+								<li class="active"><a href="./index.html">Trang chủ</a></li>
+								<li><a href="./about-us.html">Về chúng tôi</a></li>
+								<li><a href="./pages.html">Phòng nghỉ</a>
 									<ul class="dropdown">
-										<li><a href="./room-details.html">Room Details</a></li>
-										<li><a href="./blog-details.html">Blog Details</a></li>
-										<li><a href="#">Family Room</a></li>
-										<li><a href="#">Premium Room</a></li>
+										<li><a href="./room-details.html">Normal</a></li>
+										<li><a href="./blog-details.html">Vip</a></li>
+										<li><a href="#">Homestay</a></li>
 									</ul></li>
-								<li><a href="./blog.html">News</a></li>
-								<li><a href="./contact.html">Contact</a></li>
+								<li><a href="./blog.html">Tin tức</a></li>
+								<li><a href="./contact.html">Liên hệ</a></li>
 							</ul>
 						</nav>
 						<div class="nav-right search-switch">
