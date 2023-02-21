@@ -12,6 +12,7 @@ public class HomeController extends BaseController{
 		//ModelAndView mv = new ModelAndView("user/index");
 		_myShare.addObject("slides",_homeService.GetDataSlides());
 		_myShare.addObject("typeRoom", _homeService.GetDataTypeRoom());
+		_myShare.addObject("services", _homeService.GetDataServices());
 		_myShare.setViewName("user/index");
 		return _myShare;
 	}
