@@ -12,10 +12,8 @@ import SpringProject.Entity.TypeRoom;
 
 
 @Repository
-public class TypeRoomDAO {
-	@Autowired
-	public JdbcTemplate _jdbcTemplate;
-
+public class TypeRoomDAO extends BaseDAO{
+	
 	public List<TypeRoom> GetDataTypeRoom() {
 		List<TypeRoom> list = new ArrayList<TypeRoom>();
 		String sql = "SELECT * FROM type_room";

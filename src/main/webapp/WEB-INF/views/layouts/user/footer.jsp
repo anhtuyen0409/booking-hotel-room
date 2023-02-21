@@ -14,8 +14,7 @@
 							</a>
 						</div>
 						<p>
-							We inspire and reach millions of travelers<br /> across 90 local
-							websites
+							TM LUXURY QUY NHON RESORT & SPA Ghềnh Ráng, Bãi Dài Thành phố Quy Nhơn, Tỉnh Bình Định
 						</p>
 						<div class="fa-social">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
@@ -39,9 +38,9 @@
 				<div class="col-lg-3 offset-lg-1">
 					<div class="ft-newslatter">
 						<h6>New latest</h6>
-						<p>Get the latest updates and offers.</p>
+						<p>Đăng ký nhận bản tin</p>
 						<form action="#" class="fn-form">
-							<input type="text" placeholder="Email">
+							<input type="text" placeholder="Địa chỉ email của bạn">
 							<button type="submit">
 								<i class="fa fa-send"></i>
 							</button>

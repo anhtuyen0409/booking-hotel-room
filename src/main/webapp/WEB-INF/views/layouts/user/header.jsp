@@ -30,17 +30,9 @@
 	</div>
 	<nav class="mainmenu mobile-menu">
 		<ul>
-			<li class="active"><a href="./index.html">Trang chủ</a></li>
-			<li><a href="./about-us.html">Về chúng tôi</a></li>
-			<li><a href="./rooms.html">Phòng nghỉ</a>
-				<ul class="dropdown">
-					<li><a href="./room-details.html"></a></li>
-					<li><a href="#">Normal</a></li>
-					<li><a href="#">Vip</a></li>
-					<li><a href="#">Homestay</a></li>
-				</ul></li>
-			<li><a href="./blog.html">Tin tức</a></li>
-			<li><a href="./contact.html">Liên hệ</a></li>
+			<c:forEach var="item" items="${menus }">
+				<li><a href="./about-us.html">${item.name }</a></li>
+			</c:forEach>
 		</ul>
 	</nav>
 	<div id="mobile-menu-wrap"></div>
@@ -113,16 +105,9 @@
 					<div class="nav-menu">
 						<nav class="mainmenu">
 							<ul>
-								<li class="active"><a href="./index.html">Trang chủ</a></li>
-								<li><a href="./about-us.html">Về chúng tôi</a></li>
-								<li><a href="./pages.html">Phòng nghỉ</a>
-									<ul class="dropdown">
-										<li><a href="./room-details.html">Normal</a></li>
-										<li><a href="./blog-details.html">Vip</a></li>
-										<li><a href="#">Homestay</a></li>
-									</ul></li>
-								<li><a href="./blog.html">Tin tức</a></li>
-								<li><a href="./contact.html">Liên hệ</a></li>
+								<c:forEach var="item" items="${menus }">
+									<li><a href="./about-us.html">${item.name }</a></li>
+								</c:forEach>
 							</ul>
 						</nav>
 						<div class="nav-right search-switch">

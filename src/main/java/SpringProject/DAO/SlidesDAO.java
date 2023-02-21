@@ -11,9 +11,7 @@ import SpringProject.Entity.MapperSlides;
 import SpringProject.Entity.Slides;
 
 @Repository
-public class SlidesDAO {
-	@Autowired
-	public JdbcTemplate _jdbcTemplate;
+public class SlidesDAO extends BaseDAO{
 	
 	public List<Slides> GetDataSlides(){
 		List<Slides> list = new ArrayList<Slides>();

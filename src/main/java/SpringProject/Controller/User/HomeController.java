@@ -1,25 +1,19 @@
 package SpringProject.Controller.User;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import SpringProject.DAO.SlidesDAO;
-import SpringProject.Service.User.HomeService;
-
 @Controller
-public class HomeController {
-	@Autowired
-	HomeService homeService;
+public class HomeController extends BaseController{
 	
 	@RequestMapping(value = {"/", "/trang-chu"})
 	public ModelAndView Index() {
-		ModelAndView mv = new ModelAndView("user/index");
-		mv.addObject("slides",homeService.GetDataSlides());
-		mv.addObject("typeRoom", homeService.GetDataTypeRoom());
-		return mv;
+		//ModelAndView mv = new ModelAndView("user/index");
+		_myShare.addObject("slides",_homeService.GetDataSlides());
+		_myShare.addObject("typeRoom", _homeService.GetDataTypeRoom());
+		_myShare.setViewName("user/index");
+		return _myShare;
 	}
 	
 	@RequestMapping(value = "/rooms")

@@ -93,18 +93,17 @@
 						<a href="#" class="primary-btn about-btn">Xem thêm</a>
 					</div>
 				</div>
-				<!-- <c:url value="/assets/user/img/flag.jpg"/> img/about/about-1.jpg-->
 				<div class="col-lg-6">
 					<div class="about-pic">
 						<div class="row">
-							<div class="col-sm-6">
-								<img src="<c:url value="/assets/user/img/about/about-1.jpg"/>"
+							<div class="col-sm-12">
+								<img src="<c:url value="/assets/user/img/about/about-3.jpg"/>"
 									alt="">
 							</div>
-							<div class="col-sm-6">
-								<img src="<c:url value="/assets/user/img/about/about-2.jpg"/>"
+							<!--<div class="col-sm-6">
+								<img src="<c:url value="/assets/user/img/about/about-4.jpg"/>"
 									alt="">
-							</div>
+							</div>-->
 						</div>
 					</div>
 				</div>
