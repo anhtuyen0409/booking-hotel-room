@@ -11,6 +11,7 @@ public class MapperTypeRoom implements RowMapper<TypeRoom>{
 		TypeRoom typeRoom = new TypeRoom();
 		typeRoom.setId(rs.getInt("id"));
 		typeRoom.setName(rs.getString("name"));
+		typeRoom.setImg(rs.getString("img"));
 		typeRoom.setDescription(rs.getString("description"));
 		typeRoom.setStatus(rs.getInt("status"));
 		return typeRoom;

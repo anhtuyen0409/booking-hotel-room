@@ -391,35 +391,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-8">
-					<div class="blog-item small-size set-bg"
-						data-setbg="<c:url value="/assets/user/img/blog/blog-wide.jpg"/>">
-						<div class="bi-text">
-							<span class="b-tag">Event</span>
-							<h4>
-								<a href="#">Trip To Iqaluit In Nunavut A Canadian Arctic
-									City</a>
-							</h4>
-							<div class="b-time">
-								<i class="icon_clock_alt"></i> 08th April, 2019
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="blog-item small-size set-bg"
-						data-setbg="<c:url value="/assets/user/img/blog/blog-10.jpg"/>">
-						<div class="bi-text">
-							<span class="b-tag">Travel</span>
-							<h4>
-								<a href="#">Traveling To Barcelona</a>
-							</h4>
-							<div class="b-time">
-								<i class="icon_clock_alt"></i> 12th April, 2019
-							</div>
-						</div>
-					</div>
-				</div>
+				
 			</div>
 		</div>
 	</section>

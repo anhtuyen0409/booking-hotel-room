@@ -17,10 +17,32 @@ public class HomeController extends BaseController{
 		return _myShare;
 	}
 	
-	@RequestMapping(value = "/rooms")
+	@RequestMapping(value = "/phong-nghi")
 	public ModelAndView Rooms() {
-		ModelAndView mv = new ModelAndView("user/rooms");
-		return mv;
+		//ModelAndView mv = new ModelAndView("user/phong-nghi");
+		_myShare.addObject("typeRoom", _homeService.GetDataTypeRoom());
+		_myShare.setViewName("user/phong-nghi");
+		return _myShare;
+	}
+	
+	@RequestMapping(value = "/ve-chung-toi")
+	public ModelAndView About() {
+		//ModelAndView mv = new ModelAndView("user/ve-chung-toi");
+		_myShare.setViewName("user/ve-chung-toi");
+		return _myShare;
+	}
+	
+	@RequestMapping(value = "/bai-viet")
+	public ModelAndView Posts() {
+		//ModelAndView mv = new ModelAndView("user/bai-viet");
+		_myShare.setViewName("user/bai-viet");
+		return _myShare;
+	}
+	
+	@RequestMapping(value = "/lien-he")
+	public ModelAndView Contact() {
+		_myShare.setViewName("user/lien-he");
+		return _myShare;
 	}
 }
 

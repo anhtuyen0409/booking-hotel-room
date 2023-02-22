@@ -106,7 +106,7 @@
 						<nav class="mainmenu">
 							<ul>
 								<c:forEach var="item" items="${menus }">
-									<li><a href="./about-us.html">${item.name }</a></li>
+									<li><a href="<c:url value="/${item.url }"/>">${item.name }</a></li>
 								</c:forEach>
 							</ul>
 						</nav>
