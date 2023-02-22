@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import SpringProject.Entity.Menus;
+import SpringProject.Entity.Posts;
 import SpringProject.Entity.Services;
 import SpringProject.Entity.Slides;
 import SpringProject.Entity.TypeRoom;
@@ -20,4 +21,6 @@ public interface IHome {
 	public List<Menus> GetDataMenus();
 	@Autowired
 	public List<Services> GetDataServices();
+	@Autowired
+	public List<Posts> GetDataPosts();
 }

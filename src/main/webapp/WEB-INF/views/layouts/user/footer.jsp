@@ -13,9 +13,8 @@
 								src="<c:url value="/assets/user/img/footer-logo.png"/>" alt="">
 							</a>
 						</div>
-						<p>
-							TM LUXURY QUY NHON RESORT & SPA Ghềnh Ráng, Bãi Dài Thành phố Quy Nhơn, Tỉnh Bình Định
-						</p>
+						<p>TM LUXURY QUY NHON RESORT & SPA Ghềnh Ráng, Bãi Dài Thành
+							phố Quy Nhơn, Tỉnh Bình Định</p>
 						<div class="fa-social">
 							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
 								class="fa fa-twitter"></i></a> <a href="#"><i
@@ -53,12 +52,10 @@
 	<div class="copyright-option">
 		<div class="container">
 			<div class="row">
-				
+
 				<div class="col-lg-7">
 					<div class="co-text">
-						<p>
-							Design by Tuyen Nguyen
-						</p>
+						<p>Design by Tuyen Nguyen</p>
 					</div>
 				</div>
 			</div>

@@ -35,6 +35,7 @@ public class HomeController extends BaseController{
 	@RequestMapping(value = "/bai-viet")
 	public ModelAndView Posts() {
 		//ModelAndView mv = new ModelAndView("user/bai-viet");
+		_myShare.addObject("posts", _homeService.GetDataPosts());
 		_myShare.setViewName("user/bai-viet");
 		return _myShare;
 	}

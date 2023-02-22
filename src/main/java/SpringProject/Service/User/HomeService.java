@@ -6,10 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import SpringProject.DAO.MenusDAO;
+import SpringProject.DAO.PostsDAO;
 import SpringProject.DAO.ServicesDAO;
 import SpringProject.DAO.SlidesDAO;
 import SpringProject.DAO.TypeRoomDAO;
 import SpringProject.Entity.Menus;
+import SpringProject.Entity.Posts;
 import SpringProject.Entity.Services;
 import SpringProject.Entity.Slides;
 import SpringProject.Entity.TypeRoom;
@@ -24,6 +26,8 @@ public class HomeService implements IHome {
 	private MenusDAO menusDao;
 	@Autowired
 	private ServicesDAO servicesDao;
+	@Autowired
+	private PostsDAO postsDao;
 
 	public List<Slides> GetDataSlides() {
 
@@ -41,6 +45,10 @@ public class HomeService implements IHome {
 
 	public List<Services> GetDataServices() {
 		return servicesDao.GetDataServices();
+	}
+
+	public List<Posts> GetDataPosts() {
+		return postsDao.GetDataPosts();
 	}
 
 }
