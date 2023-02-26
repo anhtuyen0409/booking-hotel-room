@@ -45,5 +45,13 @@ public class HomeController extends BaseController{
 		_myShare.setViewName("user/lien-he");
 		return _myShare;
 	}
+	
+	@RequestMapping(value = "/phong-nghi/Normal")
+	public ModelAndView Normal() {
+		//ModelAndView mv = new ModelAndView("user/phong-nghi");
+		_myShare.addObject("normalRooms", _homeService.GetDataNormalRooms());
+		_myShare.setViewName("user/Normal");
+		return _myShare;
+	}
 }
 

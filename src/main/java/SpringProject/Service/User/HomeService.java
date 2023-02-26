@@ -7,11 +7,13 @@ import org.springframework.stereotype.Service;
 
 import SpringProject.DAO.MenusDAO;
 import SpringProject.DAO.PostsDAO;
+import SpringProject.DAO.RoomsDAO;
 import SpringProject.DAO.ServicesDAO;
 import SpringProject.DAO.SlidesDAO;
 import SpringProject.DAO.TypeRoomDAO;
 import SpringProject.Entity.Menus;
 import SpringProject.Entity.Posts;
+import SpringProject.Entity.Rooms;
 import SpringProject.Entity.Services;
 import SpringProject.Entity.Slides;
 import SpringProject.Entity.TypeRoom;
@@ -28,6 +30,8 @@ public class HomeService implements IHome {
 	private ServicesDAO servicesDao;
 	@Autowired
 	private PostsDAO postsDao;
+	@Autowired
+	private RoomsDAO roomsDao;
 
 	public List<Slides> GetDataSlides() {
 
@@ -49,6 +53,10 @@ public class HomeService implements IHome {
 
 	public List<Posts> GetDataPosts() {
 		return postsDao.GetDataPosts();
+	}
+
+	public List<Rooms> GetDataNormalRooms() {
+		return roomsDao.GetDataNormalRooms();
 	}
 
 }
