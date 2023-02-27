@@ -7,7 +7,7 @@ public class Rooms {
 	private int id_typeroom;
 	private String name;
 	private String img;
-	private Double price;
+	private int price;
 	private int sizes;
 	private int guests;
 	private String services;
@@ -21,7 +21,7 @@ public class Rooms {
 		super();
 	}
 
-	public Rooms(int id, int id_typeroom, String name, String img, Double price, int sizes, int guests, String services,
+	public Rooms(int id, int id_typeroom, String name, String img, int price, int sizes, int guests, String services,
 			String description, int status, int is_delete, Date create_at, Date update_at) {
 		super();
 		this.id = id;
@@ -71,11 +71,11 @@ public class Rooms {
 		this.img = img;
 	}
 
-	public Double getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(Double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 

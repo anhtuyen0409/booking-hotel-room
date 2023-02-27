@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
-
-<title>Danh sách phòng Normal</title>
+<title>Danh sách phòng VIP</title>
 
 <body>
 	<!-- Breadcrumb Section Begin -->
@@ -12,9 +10,9 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcrumb-text">
-						<h2>Danh sách phòng Normal</h2>
+						<h2>Danh sách phòng VIP</h2>
 						<div class="bt-option">
-							<a href="/SpringProject/phong-nghi/">Phòng nghỉ</a> <span>Normal</span>
+							<a href="/SpringProject/phong-nghi/">Phòng nghỉ</a> <span>VIP</span>
 						</div>
 					</div>
 				</div>
@@ -27,16 +25,16 @@
 	<section class="rooms-section spad">
 		<div class="container">
 			<div class="row">
-				<c:forEach var="item" items="${normalRooms }">
+				<c:forEach var="item" items="${vipRooms }">
 					<div class="col-lg-4 col-md-6">
 						<div class="room-item">
 							<img
 								src="<c:url value="/assets/user/img/room/normal/${item.img }"/>"
-								alt="" style="width: 200px; height: 200px;">
+								alt="">
 							<div class="ri-text">
 								<h4>${item.name }</h4>
 								<h3>
-									<fmt:formatNumber type="number" groupingUsed="true" value="${item.price }" /> đ<span>/ngày đêm</span>
+									${item.price }<span>/ngày đêm</span>
 								</h3>
 								<table>
 									<tbody>

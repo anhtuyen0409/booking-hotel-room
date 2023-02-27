@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <title>TM Luxury - Đặt phòng khách sạn giá rẻ</title>
 <body>
 
@@ -146,134 +147,43 @@
 		<div class="container-fluid">
 			<div class="hp-room-items">
 				<div class="row">
-					<div class="col-lg-3 col-md-6">
-						<div class="hp-room-item set-bg"
-							data-setbg="<c:url value="/assets/user/img/room/room-b1.jpg"/>">
-							<div class="hr-text">
-								<h3>Double Room</h3>
-								<h2>
-									199$<span>/Pernight</span>
-								</h2>
-								<table>
-									<tbody>
-										<tr>
-											<td class="r-o">Size:</td>
-											<td>30 ft</td>
-										</tr>
-										<tr>
-											<td class="r-o">Capacity:</td>
-											<td>Max persion 5</td>
-										</tr>
-										<tr>
-											<td class="r-o">Bed:</td>
-											<td>King Beds</td>
-										</tr>
-										<tr>
-											<td class="r-o">Services:</td>
-											<td>Wifi, Television, Bathroom,...</td>
-										</tr>
-									</tbody>
-								</table>
-								<a href="#" class="primary-btn">More Details</a>
-							</div>
+					<div class="col-lg-12">
+						<div class="section-title">
+							<h2>New Rooms</h2>
+							<br />
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="hp-room-item set-bg"
-							data-setbg="<c:url value="/assets/user/img/room/room-b2.jpg"/>">
-							<div class="hr-text">
-								<h3>Premium King Room</h3>
-								<h2>
-									159$<span>/Pernight</span>
-								</h2>
-								<table>
-									<tbody>
-										<tr>
-											<td class="r-o">Size:</td>
-											<td>30 ft</td>
-										</tr>
-										<tr>
-											<td class="r-o">Capacity:</td>
-											<td>Max persion 5</td>
-										</tr>
-										<tr>
-											<td class="r-o">Bed:</td>
-											<td>King Beds</td>
-										</tr>
-										<tr>
-											<td class="r-o">Services:</td>
-											<td>Wifi, Television, Bathroom,...</td>
-										</tr>
-									</tbody>
-								</table>
-								<a href="#" class="primary-btn">More Details</a>
+
+					<c:forEach var="item" items="${newRooms }">
+						<div class="col-lg-3 col-md-6">
+							<div class="hp-room-item set-bg">
+								<img
+									src="<c:url value="/assets/user/img/room/normal/${item.img }"/>"
+									alt="" style="width: 350px; height: 500px;">
+								<div class="hr-text">
+									<h3>${item.name }</h3>
+									<h2>
+										<fmt:formatNumber type="number" groupingUsed="true"
+											value="${item.price }" />
+										đ<span>/ngày đêm</span>
+									</h2>
+									<table>
+										<tbody>
+											<tr>
+												<td class="r-o">Size:</td>
+												<td>${item.sizes }m2</td>
+											</tr>
+											<tr>
+												<td class="r-o">Guests:</td>
+												<td>${item.guests }</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="#" class="primary-btn">Xem chi tiết</a>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="hp-room-item set-bg"
-							data-setbg="<c:url value="/assets/user/img/room/room-b3.jpg"/>">
-							<div class="hr-text">
-								<h3>Deluxe Room</h3>
-								<h2>
-									198$<span>/Pernight</span>
-								</h2>
-								<table>
-									<tbody>
-										<tr>
-											<td class="r-o">Size:</td>
-											<td>30 ft</td>
-										</tr>
-										<tr>
-											<td class="r-o">Capacity:</td>
-											<td>Max persion 5</td>
-										</tr>
-										<tr>
-											<td class="r-o">Bed:</td>
-											<td>King Beds</td>
-										</tr>
-										<tr>
-											<td class="r-o">Services:</td>
-											<td>Wifi, Television, Bathroom,...</td>
-										</tr>
-									</tbody>
-								</table>
-								<a href="#" class="primary-btn">More Details</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-md-6">
-						<div class="hp-room-item set-bg"
-							data-setbg="<c:url value="/assets/user/img/room/room-b4.jpg"/>">
-							<div class="hr-text">
-								<h3>Family Room</h3>
-								<h2>
-									299$<span>/Pernight</span>
-								</h2>
-								<table>
-									<tbody>
-										<tr>
-											<td class="r-o">Size:</td>
-											<td>30 ft</td>
-										</tr>
-										<tr>
-											<td class="r-o">Capacity:</td>
-											<td>Max persion 5</td>
-										</tr>
-										<tr>
-											<td class="r-o">Bed:</td>
-											<td>King Beds</td>
-										</tr>
-										<tr>
-											<td class="r-o">Services:</td>
-											<td>Wifi, Television, Bathroom,...</td>
-										</tr>
-									</tbody>
-								</table>
-								<a href="#" class="primary-btn">More Details</a>
-							</div>
-						</div>
-					</div>
+					</c:forEach>
 				</div>
 			</div>
 		</div>
@@ -342,56 +252,24 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="section-title">
-						<span>Hotel News</span>
-						<h2>Our Blog & Event</h2>
+						<h2>New Posts</h2>
 					</div>
 				</div>
-			</div>
-			<!-- <c:url value="/assets/user/img/testimonial-logo.png"/> img/blog/blog-1.jpg-->
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="blog-item set-bg"
-						data-setbg="<c:url value="/assets/user/img/blog/blog-1.jpg"/>">
-						<div class="bi-text">
-							<span class="b-tag">Travel Trip</span>
-							<h4>
-								<a href="#">Tremblant In Canada</a>
-							</h4>
-							<div class="b-time">
-								<i class="icon_clock_alt"></i> 15th April, 2019
+				<div class="row">
+					<c:forEach var="item" items="${newPosts }">
+						<div class="col-lg-4">
+							<div class="blog-item set-bg">
+								<img src="<c:url value="/assets/user/img/post/${item.img_1 }"/>"
+								alt="" style="width: 400px;height: 450px;">
+								<div class="bi-text">
+									<h4>
+										<a href="#">${item.title }</a>
+									</h4>
+								</div>
 							</div>
 						</div>
-					</div>
+					</c:forEach>
 				</div>
-				<div class="col-lg-4">
-					<div class="blog-item set-bg"
-						data-setbg="<c:url value="/assets/user/img/blog/blog-2.jpg"/>">
-						<div class="bi-text">
-							<span class="b-tag">Camping</span>
-							<h4>
-								<a href="#">Choosing A Static Caravan</a>
-							</h4>
-							<div class="b-time">
-								<i class="icon_clock_alt"></i> 15th April, 2019
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="blog-item set-bg"
-						data-setbg="<c:url value="/assets/user/img/blog/blog-3.jpg"/>">
-						<div class="bi-text">
-							<span class="b-tag">Event</span>
-							<h4>
-								<a href="#">Copper Canyon</a>
-							</h4>
-							<div class="b-time">
-								<i class="icon_clock_alt"></i> 21th April, 2019
-							</div>
-						</div>
-					</div>
-				</div>
-				
 			</div>
 		</div>
 	</section>

@@ -59,4 +59,20 @@ public class HomeService implements IHome {
 		return roomsDao.GetDataNormalRooms();
 	}
 
+	public List<Rooms> GetDataVipRooms() {
+		return roomsDao.GetDataVipRooms();
+	}
+
+	public List<Rooms> GetDataHomestayRooms() {
+		return roomsDao.GetDataHomestayRooms();
+	}
+
+	public List<Rooms> GetDataNewRooms() {
+		return roomsDao.GetDataNewRooms();
+	}
+
+	public List<Posts> GetDataNewPosts() {
+		return postsDao.GetDataNewPosts();
+	}
+
 }

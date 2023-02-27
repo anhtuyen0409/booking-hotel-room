@@ -13,7 +13,7 @@ public class MapperRooms implements RowMapper<Rooms>{
 		room.setId_typeroom(rs.getInt("id_typeroom"));
 		room.setName(rs.getString("name"));
 		room.setImg(rs.getString("img"));
-		room.setPrice(rs.getDouble("price"));
+		room.setPrice(rs.getInt("price"));
 		room.setSizes(rs.getInt("sizes"));
 		room.setGuests(rs.getInt("guests"));
 		room.setServices(rs.getString("services"));

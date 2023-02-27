@@ -16,15 +16,24 @@ public class RoomsDAO extends BaseDAO {
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
+
 	public List<Rooms> GetDataVipRooms() {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id_typeroom = 2";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
+
 	public List<Rooms> GetDataHomestayRooms() {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id_typeroom = 3";
+		list = _jdbcTemplate.query(sql, new MapperRooms());
+		return list;
+	}
+
+	public List<Rooms> GetDataNewRooms() {
+		List<Rooms> list = new ArrayList<Rooms>();
+		String sql = "SELECT * FROM rooms WHERE is_delete = 0 AND id_typeroom = 1 ORDER BY id DESC LIMIT 4";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}

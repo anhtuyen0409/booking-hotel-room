@@ -25,5 +25,13 @@ public interface IHome {
 	@Autowired
 	public List<Posts> GetDataPosts();
 	@Autowired
+	public List<Posts> GetDataNewPosts();
+	@Autowired
 	public List<Rooms> GetDataNormalRooms();
+	@Autowired
+	public List<Rooms> GetDataVipRooms();
+	@Autowired
+	public List<Rooms> GetDataHomestayRooms();
+	@Autowired
+	public List<Rooms> GetDataNewRooms();
 }
