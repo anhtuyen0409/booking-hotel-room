@@ -10,21 +10,28 @@ import SpringProject.Entity.Rooms;
 
 @Repository
 public class RoomsDAO extends BaseDAO {
-	public List<Rooms> GetDataNormalRooms() {
+	public List<Rooms> GetDataNormalRoom() {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id_typeroom = 1";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
 
-	public List<Rooms> GetDataVipRooms() {
+	public List<Rooms> GetDataNormalRoomPaginate(int start, int totalPage) {
+		List<Rooms> list = new ArrayList<Rooms>();
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 1 LIMIT " + start + ", " + totalPage;
+		list = _jdbcTemplate.query(sql, new MapperRooms());
+		return list;
+	}
+
+	public List<Rooms> GetDataVipRoom() {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id_typeroom = 2";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
 
-	public List<Rooms> GetDataHomestayRooms() {
+	public List<Rooms> GetDataHomestayRoom() {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id_typeroom = 3";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
@@ -33,7 +40,14 @@ public class RoomsDAO extends BaseDAO {
 
 	public List<Rooms> GetDataNewRooms() {
 		List<Rooms> list = new ArrayList<Rooms>();
-		String sql = "SELECT * FROM rooms WHERE is_delete = 0 AND id_typeroom = 1 ORDER BY id DESC LIMIT 4";
+		String sql = "SELECT * FROM rooms WHERE is_delete = 0 ORDER BY id DESC LIMIT 4";
+		list = _jdbcTemplate.query(sql, new MapperRooms());
+		return list;
+	}
+
+	public List<Rooms> GetDataRoom(int id) {
+		List<Rooms> list = new ArrayList<Rooms>();
+		String sql = "SELECT * FROM rooms WHERE id = " + id;
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}

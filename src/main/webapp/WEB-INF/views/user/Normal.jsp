@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <title>Danh sách phòng Normal</title>
 
@@ -27,16 +27,17 @@
 	<section class="rooms-section spad">
 		<div class="container">
 			<div class="row">
-				<c:forEach var="item" items="${normalRooms }">
+				<c:forEach var="item" items="${normalRoomsPaginate }">
 					<div class="col-lg-4 col-md-6">
 						<div class="room-item">
-							<img
-								src="<c:url value="/assets/user/img/room/normal/${item.img }"/>"
+							<img src="<c:url value="/assets/user/img/room/${item.img }"/>"
 								alt="" style="width: 200px; height: 200px;">
 							<div class="ri-text">
 								<h4>${item.name }</h4>
 								<h3>
-									<fmt:formatNumber type="number" groupingUsed="true" value="${item.price }" /> đ<span>/ngày đêm</span>
+									<fmt:formatNumber type="number" groupingUsed="true"
+										value="${item.price }" />
+									đ<span>/ngày đêm</span>
 								</h3>
 								<table>
 									<tbody>
@@ -50,7 +51,8 @@
 										</tr>
 									</tbody>
 								</table>
-								<a href="<c:url value="/phong-nghi/${item.name }"/>"
+								<a
+									href="<c:url value="/phong-nghi/type-room=Normal/id-room=${item.id }"/>"
 									class="primary-btn">Xem chi tiết</a>
 							</div>
 						</div>
@@ -58,8 +60,17 @@
 				</c:forEach>
 				<div class="col-lg-12">
 					<div class="room-pagination">
-						<a href="#">1</a> <a href="#">2</a> <a href="#">Next <i
-							class="fa fa-long-arrow-right"></i></a>
+						<c:forEach var="item" begin="1" end="${paginateInfo.totalPage }"
+							varStatus="loop">
+							<c:if test="${(loop.index) == paginateInfo.currentPage}">
+								<a
+									href="<c:url value="/phong-nghi/type-room=Normal/page=${loop.index }"/>">${loop.index}</a>
+							</c:if>
+							<c:if test="${(loop.index) != paginateInfo.currentPage}">
+								<a
+									href="<c:url value="/phong-nghi/type-room=Normal/page=${loop.index }"/>">${loop.index}</a>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 			</div>

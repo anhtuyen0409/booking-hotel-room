@@ -36,7 +36,7 @@
 							<div class="ri-text">
 								<h4>${item.name }</h4>
 								<p>${item.description }</p>
-								<a href="<c:url value="/phong-nghi/${item.name }"/>" class="primary-btn">Xem thêm</a>
+								<a href="<c:url value="/phong-nghi/type-room=${item.name }"/>" class="primary-btn">Xem thêm</a>
 							</div>
 						</div>
 					</div>

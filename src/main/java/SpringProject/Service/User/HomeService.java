@@ -55,18 +55,6 @@ public class HomeService implements IHome {
 		return postsDao.GetDataPosts();
 	}
 
-	public List<Rooms> GetDataNormalRooms() {
-		return roomsDao.GetDataNormalRooms();
-	}
-
-	public List<Rooms> GetDataVipRooms() {
-		return roomsDao.GetDataVipRooms();
-	}
-
-	public List<Rooms> GetDataHomestayRooms() {
-		return roomsDao.GetDataHomestayRooms();
-	}
-
 	public List<Rooms> GetDataNewRooms() {
 		return roomsDao.GetDataNewRooms();
 	}
@@ -75,4 +63,23 @@ public class HomeService implements IHome {
 		return postsDao.GetDataNewPosts();
 	}
 
+	public List<Rooms> GetDataNormalRoom() {
+		return roomsDao.GetDataNormalRoom();
+	}
+
+	public List<Rooms> GetDataNormalRoomPaginate(int start, int totalPage) {
+		return roomsDao.GetDataNormalRoomPaginate(start, totalPage);
+	}
+
+	public List<Rooms> GetDataVipRoom() {
+		return roomsDao.GetDataVipRoom();
+	}
+
+	public List<Rooms> GetDataHomestayRoom() {
+		return roomsDao.GetDataHomestayRoom();
+	}
+
+	public List<Rooms> GetDataRoom(int id) {
+		return roomsDao.GetDataRoom(id);
+	}
 }

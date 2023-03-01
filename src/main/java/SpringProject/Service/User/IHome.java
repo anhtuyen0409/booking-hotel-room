@@ -16,22 +16,37 @@ import SpringProject.Entity.TypeRoom;
 public interface IHome {
 	@Autowired
 	public List<Slides> GetDataSlides();
+
 	@Autowired
 	public List<TypeRoom> GetDataTypeRoom();
+
 	@Autowired
 	public List<Menus> GetDataMenus();
+
 	@Autowired
 	public List<Services> GetDataServices();
+
 	@Autowired
 	public List<Posts> GetDataPosts();
+
 	@Autowired
 	public List<Posts> GetDataNewPosts();
+
 	@Autowired
-	public List<Rooms> GetDataNormalRooms();
+	public List<Rooms> GetDataNormalRoom();
+
 	@Autowired
-	public List<Rooms> GetDataVipRooms();
+	public List<Rooms> GetDataNormalRoomPaginate(int start, int totalPage);
+
 	@Autowired
-	public List<Rooms> GetDataHomestayRooms();
+	public List<Rooms> GetDataVipRoom();
+
+	@Autowired
+	public List<Rooms> GetDataHomestayRoom();
+
 	@Autowired
 	public List<Rooms> GetDataNewRooms();
+
+	@Autowired
+	public List<Rooms> GetDataRoom(int id);
 }

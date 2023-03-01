@@ -158,7 +158,7 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="hp-room-item set-bg">
 								<img
-									src="<c:url value="/assets/user/img/room/normal/${item.img }"/>"
+									src="<c:url value="/assets/user/img/room/${item.img }"/>"
 									alt="" style="width: 350px; height: 500px;">
 								<div class="hr-text">
 									<h3>${item.name }</h3>

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <title>Danh sách Homestay</title>
 
 <body>
@@ -28,13 +30,14 @@
 				<c:forEach var="item" items="${homestayRooms }">
 					<div class="col-lg-4 col-md-6">
 						<div class="room-item">
-							<img
-								src="<c:url value="/assets/user/img/room/normal/${item.img }"/>"
-								alt="">
+							<img src="<c:url value="/assets/user/img/room/${item.img }"/>"
+								alt="" style="width: 200px; height: 200px;">
 							<div class="ri-text">
 								<h4>${item.name }</h4>
 								<h3>
-									${item.price }<span>/ngày đêm</span>
+									<fmt:formatNumber type="number" groupingUsed="true"
+										value="${item.price }" />
+									đ<span>/ngày đêm</span>
 								</h3>
 								<table>
 									<tbody>
@@ -48,7 +51,7 @@
 										</tr>
 									</tbody>
 								</table>
-								<a href="<c:url value="/phong-nghi/${item.name }"/>"
+								<a href="<c:url value="/phong-nghi/type-room=Homestay/id-room=${item.id }"/>"
 									class="primary-btn">Xem chi tiết</a>
 							</div>
 						</div>
