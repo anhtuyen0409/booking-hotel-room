@@ -1,5 +1,7 @@
 package SpringProject.Controller.User;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,7 +18,7 @@ public class UserController extends BaseController {
 	private UsersService usersService;
 
 	@RequestMapping(value = "/dang-ky", method = RequestMethod.GET)
-	public ModelAndView Sigup() {
+	public ModelAndView SigUp() {
 		_myShare.setViewName("user/dang-ky");
 		_myShare.addObject("user", new Users());
 		return _myShare;
@@ -32,13 +34,20 @@ public class UserController extends BaseController {
 			_myShare.addObject("status", "Đăng ký tài khoản thất bại!");
 		}
 		_myShare.setViewName("user/dang-ky");
-		//_myShare.addObject("status", true);
 		return _myShare;
 	}
 
-	@RequestMapping(value = "/dang-nhap")
-	public ModelAndView SigIn() {
+	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
+	public ModelAndView SigIn(HttpSession session, @ModelAttribute("user") Users user) {
+		boolean check = usersService.checkUser(user);
 		_myShare.setViewName("user/dang-nhap");
+		if(check) {
+			_myShare.setViewName("redirect:trang-chu");
+			session.setAttribute("LoginInfo", user);
+		}
+		else {
+			_myShare.addObject("status", "Đăng nhập thất bại!");
+		}
 		return _myShare;
 	}
 }

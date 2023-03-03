@@ -1,7 +1,10 @@
 package SpringProject.DAO;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
+import SpringProject.Entity.MapperUsers;
 import SpringProject.Entity.Users;
 
 @Repository
@@ -13,4 +16,13 @@ public class UsersDAO extends BaseDAO {
 		int insert = _jdbcTemplate.update(sql);
 		return insert;
 	}
+	
+	public Users getUser(Users user) {
+		String sql = "SELECT * FROM users WHERE email = '"+user.getEmail()+"'";
+		List<Users> result = _jdbcTemplate.query(sql, new MapperUsers());
+		if(result.isEmpty()==false) {
+			return result.get(0);
+		}
+		return null;
+	}	
 }
