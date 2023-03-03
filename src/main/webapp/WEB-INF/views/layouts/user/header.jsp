@@ -79,8 +79,8 @@
 								<div class="nav-menu">
 									<nav class="mainmenu">
 										<ul>
-											<li><a href="./index.html">Đăng nhập</a></li>
-											<li><a href="./about-us.html">Đăng ký</a></li>
+											<li><a href="<c:url value="/dang-nhap"/>">Đăng nhập</a></li>
+											<li><a href="<c:url value="/dang-ky"/>">Đăng ký</a></li>
 										</ul>
 									</nav>
 								</div>

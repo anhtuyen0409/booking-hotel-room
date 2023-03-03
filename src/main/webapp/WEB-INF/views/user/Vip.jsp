@@ -27,7 +27,7 @@
 	<section class="rooms-section spad">
 		<div class="container">
 			<div class="row">
-				<c:forEach var="item" items="${vipRooms }">
+				<c:forEach var="item" items="${vipRoomsPaginate }">
 					<div class="col-lg-4 col-md-6">
 						<div class="room-item">
 							<img src="<c:url value="/assets/user/img/room/${item.img }"/>"
@@ -51,7 +51,8 @@
 										</tr>
 									</tbody>
 								</table>
-								<a href="<c:url value="/phong-nghi/type-room=Vip/id-room=${item.id }"/>"
+								<a
+									href="<c:url value="/phong-nghi/type-room=Vip/id-room=${item.id }"/>"
 									class="primary-btn">Xem chi tiết</a>
 							</div>
 						</div>
@@ -59,8 +60,17 @@
 				</c:forEach>
 				<div class="col-lg-12">
 					<div class="room-pagination">
-						<a href="#">1</a> <a href="#">2</a> <a href="#">Next <i
-							class="fa fa-long-arrow-right"></i></a>
+						<c:forEach var="item" begin="1" end="${paginateInfo.totalPage }"
+							varStatus="loop">
+							<c:if test="${(loop.index) == paginateInfo.currentPage}">
+								<a
+									href="<c:url value="/phong-nghi/type-room=Vip/page=${loop.index }"/>">${loop.index}</a>
+							</c:if>
+							<c:if test="${(loop.index) != paginateInfo.currentPage}">
+								<a
+									href="<c:url value="/phong-nghi/type-room=Vip/page=${loop.index }"/>">${loop.index}</a>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 			</div>

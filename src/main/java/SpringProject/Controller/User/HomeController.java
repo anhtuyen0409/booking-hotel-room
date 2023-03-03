@@ -31,5 +31,4 @@ public class HomeController extends BaseController {
 		_myShare.setViewName("user/lien-he");
 		return _myShare;
 	}
-
 }

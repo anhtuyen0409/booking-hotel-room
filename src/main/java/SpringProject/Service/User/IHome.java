@@ -42,7 +42,13 @@ public interface IHome {
 	public List<Rooms> GetDataVipRoom();
 
 	@Autowired
+	public List<Rooms> GetDataVipRoomPaginate(int start, int totalPage);
+
+	@Autowired
 	public List<Rooms> GetDataHomestayRoom();
+
+	@Autowired
+	public List<Rooms> GetDataHomestayRoomPaginate(int start, int totalPage);
 
 	@Autowired
 	public List<Rooms> GetDataNewRooms();

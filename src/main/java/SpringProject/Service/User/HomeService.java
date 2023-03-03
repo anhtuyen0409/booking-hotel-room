@@ -75,8 +75,16 @@ public class HomeService implements IHome {
 		return roomsDao.GetDataVipRoom();
 	}
 
+	public List<Rooms> GetDataVipRoomPaginate(int start, int totalPage) {
+		return roomsDao.GetDataVipRoomPaginate(start, totalPage);
+	}
+
 	public List<Rooms> GetDataHomestayRoom() {
 		return roomsDao.GetDataHomestayRoom();
+	}
+
+	public List<Rooms> GetDataHomestayRoomPaginate(int start, int totalPage) {
+		return roomsDao.GetDataHomestayRoomPaginate(start, totalPage);
 	}
 
 	public List<Rooms> GetDataRoom(int id) {

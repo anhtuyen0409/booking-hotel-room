@@ -13,7 +13,7 @@ import SpringProject.Service.User.PaginatesService;
 public class RoomsController extends BaseController {
 	@Autowired
 	private PaginatesService paginateService;
-	
+
 	private int totalPage = 6;
 
 	@RequestMapping(value = "/phong-nghi/type-room=Normal")
@@ -40,14 +40,41 @@ public class RoomsController extends BaseController {
 
 	@RequestMapping(value = "/phong-nghi/type-room=Vip")
 	public ModelAndView VipRoom() {
-		_myShare.addObject("vipRooms", _homeService.GetDataVipRoom());
+		int totalData = _homeService.GetDataVipRoom().size();
+		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalPage, 1);
+		_myShare.addObject("paginateInfo", paginateInfo);
+		_myShare.addObject("vipRoomsPaginate", _homeService.GetDataVipRoomPaginate(paginateInfo.getStart(), totalPage));
+		_myShare.setViewName("user/Vip");
+		return _myShare;
+	}
+
+	@RequestMapping(value = "/phong-nghi/type-room=Vip/page={currentPage}")
+	public ModelAndView VipRoomPaginate(@PathVariable int currentPage) {
+		int totalData = _homeService.GetDataVipRoom().size();
+		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalPage, currentPage);
+		_myShare.addObject("paginateInfo", paginateInfo);
+		_myShare.addObject("vipRoomsPaginate", _homeService.GetDataVipRoomPaginate(paginateInfo.getStart(), totalPage));
 		_myShare.setViewName("user/Vip");
 		return _myShare;
 	}
 
 	@RequestMapping(value = "/phong-nghi/type-room=Homestay")
 	public ModelAndView HomestayRoom() {
-		_myShare.addObject("homestayRooms", _homeService.GetDataHomestayRoom());
+		int totalData = _homeService.GetDataHomestayRoom().size();
+		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalPage, 1);
+		_myShare.addObject("paginateInfo", paginateInfo);
+		_myShare.addObject("homestayRoomsPaginate",
+				_homeService.GetDataHomestayRoomPaginate(paginateInfo.getStart(), totalPage));
+		_myShare.setViewName("user/Homestay");
+		return _myShare;
+	}
+
+	@RequestMapping(value = "/phong-nghi/type-room=Homestay/page={currentPage}")
+	public ModelAndView HomestayRoomPaginate(@PathVariable int currentPage) {
+		int totalData = _homeService.GetDataHomestayRoom().size();
+		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalPage, currentPage);
+		_myShare.addObject("paginateInfo", paginateInfo);
+		_myShare.addObject("homestayRoomsPaginate", _homeService.GetDataHomestayRoomPaginate(paginateInfo.getStart(), totalPage));
 		_myShare.setViewName("user/Homestay");
 		return _myShare;
 	}

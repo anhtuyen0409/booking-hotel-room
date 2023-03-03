@@ -31,9 +31,23 @@ public class RoomsDAO extends BaseDAO {
 		return list;
 	}
 
+	public List<Rooms> GetDataVipRoomPaginate(int start, int totalPage) {
+		List<Rooms> list = new ArrayList<Rooms>();
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 2 LIMIT " + start + ", " + totalPage;
+		list = _jdbcTemplate.query(sql, new MapperRooms());
+		return list;
+	}
+
 	public List<Rooms> GetDataHomestayRoom() {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id_typeroom = 3";
+		list = _jdbcTemplate.query(sql, new MapperRooms());
+		return list;
+	}
+
+	public List<Rooms> GetDataHomestayRoomPaginate(int start, int totalPage) {
+		List<Rooms> list = new ArrayList<Rooms>();
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 3 LIMIT " + start + ", " + totalPage;
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
