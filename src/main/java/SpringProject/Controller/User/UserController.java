@@ -1,5 +1,6 @@
 package SpringProject.Controller.User;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +40,9 @@ public class UserController extends BaseController {
 
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
 	public ModelAndView SigIn(HttpSession session, @ModelAttribute("user") Users user) {
-		boolean check = usersService.checkUser(user);
+		user = usersService.checkUser(user);
 		_myShare.setViewName("user/dang-nhap");
-		if(check) {
+		if(user != null) {
 			_myShare.setViewName("redirect:trang-chu");
 			session.setAttribute("LoginInfo", user);
 		}
@@ -49,5 +50,11 @@ public class UserController extends BaseController {
 			_myShare.addObject("status", "Đăng nhập thất bại!");
 		}
 		return _myShare;
+	}
+	
+	@RequestMapping(value = "/dang-xuat", method = RequestMethod.GET)
+	public String SigIn(HttpSession session, HttpServletRequest request) {
+		session.removeAttribute("LoginInfo");
+		return "redirect:"+request.getHeader("Referer");
 	}
 }

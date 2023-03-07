@@ -18,17 +18,17 @@ public class UsersService implements IUsers {
 		return usersDAO.addUser(user);
 	}
 
-	public boolean checkUser(Users user) {
+	public Users checkUser(Users user) {
 		String pass = user.getPassword();
 		user = usersDAO.getUser(user);
 		if (user != null) {
 			if (BCrypt.checkpw(pass, user.getPassword())) {
-				return true;
+				return user;
 			}
 			else {
-				return false;
+				return null;
 			}
 		}
-		return false;
+		return null;
 	}
 }

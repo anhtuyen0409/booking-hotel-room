@@ -10,5 +10,5 @@ public interface IUsers {
 	@Autowired
 	public int addUser(Users user);
 	@Autowired
-	public boolean checkUser(Users user);
+	public Users checkUser(Users user);
 }

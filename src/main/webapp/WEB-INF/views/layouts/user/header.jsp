@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- Offcanvas Menu Section Begin -->
 <div class="offcanvas-menu-overlay"></div>
 <div class="canvas-open">
@@ -54,33 +54,31 @@
 	<div class="top-nav">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-5">
+				<div class="col-lg-8">
 					<ul class="tn-left">
 						<li><i class="fa fa-phone"></i> 039 442 0076</li>
 						<li><i class="fa fa-envelope"></i>
 							nguyenanhtuyen10a5@gmail.com</li>
 					</ul>
 				</div>
+
 				<div class="col-lg-4">
-					<div class="tn-right">
-						<div class="top-social">
-							<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-								class="fa fa-twitter"></i></a> <a href="#"><i
-								class="fa fa-tripadvisor"></i></a> <a href="#"><i
-								class="fa fa-instagram"></i></a>
-						</div>
-						<a href="#" class="bk-btn">Đặt phòng ngay</a>
-					</div>
-				</div>
-				<div class="col-lg-3">
 					<div class="menu-item">
 						<div class="container">
 							<div class="row">
 								<div class="nav-menu">
 									<nav class="mainmenu">
 										<ul>
-											<li><a href="<c:url value="/dang-nhap"/>">Đăng nhập</a></li>
-											<li><a href="<c:url value="/dang-ky"/>">Đăng ký</a></li>
+											<c:if test="${empty LoginInfo }">
+												<li><a href="<c:url value="/dang-nhap"/>">Đăng nhập</a></li>
+												<li><a href="<c:url value="/dang-ky"/>">Đăng ký</a></li>
+											</c:if>
+											<c:if test="${not empty LoginInfo }">
+												<li><a href="<c:url value="/thong-tin-ca-nhan"/>">Xin
+														chào ${LoginInfo.name }!</a></li>
+												<li><a href="<c:url value="/dang-xuat"/>">Đăng xuất</a></li>
+											</c:if>
+
 										</ul>
 									</nav>
 								</div>
