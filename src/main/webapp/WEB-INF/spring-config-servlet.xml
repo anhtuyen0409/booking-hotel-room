@@ -30,5 +30,5 @@
 	
 	<mvc:annotation-driven />
 	<mvc:resources mapping="/assets/user/**" location="/assets/user/"/>
-	
+	<mvc:resources mapping="/assets/admin/**" location="/assets/admin/"/>
 </beans>

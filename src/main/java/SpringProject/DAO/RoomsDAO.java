@@ -10,13 +10,15 @@ import SpringProject.Entity.Rooms;
 
 @Repository
 public class RoomsDAO extends BaseDAO {
+	//lấy danh sách phòng normal
 	public List<Rooms> GetDataNormalRoom() {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id_typeroom = 1";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
-
+	
+	//phân trang phòng normal
 	public List<Rooms> GetDataNormalRoomPaginate(int start, int totalPage) {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id_typeroom = 1 LIMIT " + start + ", " + totalPage;
@@ -62,6 +64,14 @@ public class RoomsDAO extends BaseDAO {
 	public List<Rooms> GetDataRoom(int id) {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE id = " + id;
+		list = _jdbcTemplate.query(sql, new MapperRooms());
+		return list;
+	}
+	
+	//lấy toàn bộ phòng
+	public List<Rooms> GetDataRooms() {
+		List<Rooms> list = new ArrayList<Rooms>();
+		String sql = "SELECT * FROM rooms WHERE is_delete = 0";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}

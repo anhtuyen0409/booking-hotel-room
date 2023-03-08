@@ -33,24 +33,30 @@
 										</div>
 										<div class="form-outline mb-4">
 											<form:input type="number" path="phone" id="form3Example8"
-												class="form-control form-control-lg" placeholder="Số điện thoại" />
+												class="form-control form-control-lg"
+												placeholder="Số điện thoại" />
 										</div>
 										<div class="form-outline mb-4">
 											<form:input type="email" path="email" id="form3Example8"
 												class="form-control form-control-lg" placeholder="Email" />
 										</div>
 										<div class="form-outline mb-4">
-											<form:input type="password" path="password" id="form3Example8"
-												class="form-control form-control-lg" placeholder="Mật khẩu" />
+											<form:input type="password" path="password"
+												id="form3Example8" class="form-control form-control-lg"
+												placeholder="Mật khẩu" />
 										</div>
 										<div class="form-outline mb-4">
-											<form:input type="password" path="confirm_password" id="form3Example8"
-												class="form-control form-control-lg" placeholder="Xác nhận mật khẩu" />
+											<form:input type="password" path="confirm_password"
+												id="form3Example8" class="form-control form-control-lg"
+												placeholder="Xác nhận mật khẩu" />
 										</div>
 										<div>
 											<button type="submit" class="btn btn-warning btn-lg ms-2"
 												style="width: 455px;">Đăng ký</button>
 										</div>
+										<c:if test="${status }">
+											<h1>${status }</h1>
+										</c:if>
 									</form:form>
 									<br />
 									<div class="d-flex justify-content-end">

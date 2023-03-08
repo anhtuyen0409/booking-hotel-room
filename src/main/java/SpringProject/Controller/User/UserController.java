@@ -40,11 +40,17 @@ public class UserController extends BaseController {
 
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
 	public ModelAndView SigIn(HttpSession session, @ModelAttribute("user") Users user) {
-		user = usersService.checkUser(user);
+		user = usersService.checkUser(user);    
 		_myShare.setViewName("user/dang-nhap");
 		if(user != null) {
-			_myShare.setViewName("redirect:trang-chu");
-			session.setAttribute("LoginInfo", user);
+			if(user.getType_account().equalsIgnoreCase("user")) {
+				_myShare.setViewName("redirect:trang-chu");
+				session.setAttribute("LoginInfo", user);
+			}
+			else if(user.getType_account().equalsIgnoreCase("admin")) {
+				_myShare.setViewName("redirect:quan-tri/");
+				session.setAttribute("LoginInfo", user);
+			}
 		}
 		else {
 			_myShare.addObject("status", "Đăng nhập thất bại!");
@@ -55,6 +61,7 @@ public class UserController extends BaseController {
 	@RequestMapping(value = "/dang-xuat", method = RequestMethod.GET)
 	public String SigIn(HttpSession session, HttpServletRequest request) {
 		session.removeAttribute("LoginInfo");
-		return "redirect:"+request.getHeader("Referer");
+		return "redirect:trang-chu";
+		//return "redirect:"+request.getHeader("Referer");
 	}
 }
