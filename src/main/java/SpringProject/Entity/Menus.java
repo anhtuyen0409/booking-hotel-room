@@ -4,16 +4,18 @@ public class Menus {
 	private int id;
 	private String name;
 	private String url;
+	private int is_delete;
 
 	public Menus() {
 		super();
 	}
 
-	public Menus(int id, String name, String url) {
+	public Menus(int id, String name, String url, int is_delete) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.url = url;
+		this.is_delete = is_delete;
 	}
 
 	public int getId() {
@@ -38,6 +40,14 @@ public class Menus {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public int getIs_delete() {
+		return is_delete;
+	}
+
+	public void setIs_delete(int is_delete) {
+		this.is_delete = is_delete;
 	}
 
 }

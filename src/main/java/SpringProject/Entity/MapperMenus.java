@@ -12,6 +12,7 @@ public class MapperMenus implements RowMapper<Menus> {
 		menus.setId(rs.getInt("id"));
 		menus.setName(rs.getString("name"));
 		menus.setUrl(rs.getString("url"));
+		menus.setIs_delete(rs.getInt("is_delete"));
 		return menus;
 	}
 

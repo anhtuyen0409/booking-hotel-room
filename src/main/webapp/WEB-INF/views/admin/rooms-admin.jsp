@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <title>Danh sách phòng</title>
 
@@ -42,7 +43,7 @@
 										style="width: 100px; height: 100px;"
 										src="<c:url value="/assets/user/img/room/${item.img }"/>"
 										alt="Alternate Text" /></td>
-									<td style="white-space: pre-wrap;">${item.price }</td>
+									<td style="white-space: pre-wrap;"><fmt:formatNumber type="number" groupingUsed="true" value="${item.price }" /> đ</td>
 									<td style="white-space: pre-wrap;">${item.sizes }</td>
 									<td style="white-space: pre-wrap;">${item.guests }</td>
 									<td style="white-space: pre-wrap;">${item.services }</td>
