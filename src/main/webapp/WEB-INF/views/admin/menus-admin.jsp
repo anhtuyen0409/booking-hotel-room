@@ -13,7 +13,7 @@
 		<div style="position: relative;">
 			<button style="position: absolute; right: 0;" type="button"
 				class="btn btn-success">
-				<a href="<c:url value="/quan-tri/add-menu"/>">Thêm mới 
+				<a href="<c:url value="/quan-tri/add-menu"/>">Thêm mới </a>
 			</button>
 		</div>
 

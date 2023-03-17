@@ -13,7 +13,7 @@ public class MapperTypeRoom implements RowMapper<TypeRoom>{
 		typeRoom.setName(rs.getString("name"));
 		typeRoom.setImg(rs.getString("img"));
 		typeRoom.setDescription(rs.getString("description"));
-		typeRoom.setStatus(rs.getInt("status"));
+		typeRoom.setIs_delete(rs.getInt("is_delete"));
 		return typeRoom;
 	}
 
