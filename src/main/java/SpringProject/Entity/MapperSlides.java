@@ -13,6 +13,7 @@ public class MapperSlides implements RowMapper<Slides>{
 		slides.setImg(rs.getString("img"));
 		slides.setCaption(rs.getString("caption"));
 		slides.setContent(rs.getString("content"));
+		slides.setIs_delete(rs.getInt("is_delete"));
 		return slides;
 	}
 	

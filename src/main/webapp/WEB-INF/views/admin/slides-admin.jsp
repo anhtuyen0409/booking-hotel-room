@@ -9,8 +9,14 @@
 	<div class="container-fluid">
 		<br />
 		<!-- Page Heading -->
-		<h1 class="h3 mb-2 text-gray-800">Danh sách Slides</h1>
-		<br />
+		<div style="position: relative;">
+			<button style="position: absolute; right: 0;" type="button"
+				class="btn btn-success">
+				<a href="<c:url value="/quan-tri/add-slide"/>">Thêm mới 
+			</button>
+		</div>
+
+		<br /> <br />
 		<!-- DataTales Example -->
 		<div class="card shadow mb-4">
 
@@ -44,10 +50,10 @@
 											<a style="text-decoration: none;" href="">Chi tiết 
 										</button>
 										<button type="button" class="btn btn-light">
-											<a style="text-decoration: none;" href="">Sửa 
+											<a style="text-decoration: none;" href="<c:url value="/quan-tri/update-slide/id-slide=${item.id}"/>">Sửa 
 										</button>
 										<button type="button" class="btn btn-light">
-											<a style="text-decoration: none;" href="">Xoá 
+											<a style="text-decoration: none;" href="<c:url value="/quan-tri/id-slide=${item.id}"/>">Xoá 
 										</button>
 
 									</td>
