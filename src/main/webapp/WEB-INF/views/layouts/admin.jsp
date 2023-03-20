@@ -21,7 +21,7 @@
 	content="Empire, bootstrap admin template, bootstrap admin panel, bootstrap 4 admin template, admin template">
 <meta name="author" content="Srthemesvilla" />
 <link rel="icon" type="image/x-icon"
-	href="<c:url value="/assets/admin/img/favicon.ico"/>">
+	href="<c:url value="/assets/user/admin/img/favicon.ico"/>">
 
 
 <!-- Google fonts -->
@@ -102,7 +102,7 @@
 
 	<!-- Libs -->
 	<script
-		src="<c:url value="/assets/admin/libs/perfect-scrollbar/perfect-scrollbar.js"/>"></script>
+		src="<c:url value="/assets/user/admin/libs/perfect-scrollbar/perfect-scrollbar.js"/>"></script>
 	<script src="<c:url value="/assets/admin/libs/eve/eve.js"/>"></script>
 	<script src="<c:url value="/assets/admin/libs/flot/flot.js"/>"></script>
 	<script src="<c:url value="/assets/admin/libs/flot/curvedLines.js"/>"></script>

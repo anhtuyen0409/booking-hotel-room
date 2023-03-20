@@ -102,7 +102,7 @@
 									alt="">
 							</div>
 							<!--<div class="col-sm-6">
-								<img src="<c:url value="/assets/user/img/about/about-4.jpg"/>"
+								<img src="<c:url value="/assets/user/user/img/about/about-4.jpg"/>"
 									alt="">
 							</div>-->
 						</div>
@@ -218,7 +218,7 @@
 								</div>
 								<h5>- Alexander Vasquez</h5>
 							</div>
-							<!-- <c:url value="/assets/user/img/room/room-b1.jpg"/> img/testimonial-logo.png-->
+							<!-- <c:url value="/assets/user/user/img/room/room-b1.jpg"/> img/testimonial-logo.png-->
 							<img src="<c:url value="/assets/user/img/testimonial-logo.png"/>"
 								alt="">
 						</div>

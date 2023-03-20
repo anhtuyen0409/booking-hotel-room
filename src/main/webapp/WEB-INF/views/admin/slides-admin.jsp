@@ -9,6 +9,7 @@
 	<div class="container-fluid">
 		<br />
 		<!-- Page Heading -->
+		<h1 class="h3 mb-2 text-gray-800">Danh sách Slide</h1>
 		<div style="position: relative;">
 			<button style="position: absolute; right: 0;" type="button"
 				class="btn btn-success">

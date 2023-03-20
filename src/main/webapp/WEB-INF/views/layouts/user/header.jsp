@@ -16,7 +16,7 @@
 	</div>
 	<div class="header-configure-area">
 		<div class="language-option">
-			<img src="<c:url value="/assets/user/img/flag.jpg"/>" alt=""> <span>EN
+			<img src="<c:url value="/assets/user/user/img/flag.jpg"/>" alt=""> <span>EN
 				<i class="fa fa-angle-down"></i>
 			</span>
 			<div class="flag-dropdown">
@@ -95,7 +95,7 @@
 				<div class="col-lg-2">
 					<div class="logo">
 						<a href="./index.html"> <img
-							src="<c:url value="/assets/user/img/logo3.png"/>" alt="">
+							src="<c:url value="/assets/user/user/img/logo3.png"/>" alt="">
 						</a>
 					</div>
 				</div>

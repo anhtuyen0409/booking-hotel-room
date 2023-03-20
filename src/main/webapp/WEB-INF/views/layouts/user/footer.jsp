@@ -10,7 +10,7 @@
 					<div class="ft-about">
 						<div class="logo">
 							<a href="#"> <img
-								src="<c:url value="/assets/user/img/footer-logo.png"/>" alt="">
+								src="<c:url value="/assets/user/user/img/footer-logo.png"/>" alt="">
 							</a>
 						</div>
 						<p>TM LUXURY QUY NHON RESORT & SPA Ghềnh Ráng, Bãi Dài Thành

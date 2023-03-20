@@ -9,7 +9,7 @@
 	class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-dark container-p-x"
 	id="layout-navbar">
 
-	<!-- Brand demo (see assets/css/demo/demo.css) -->
+	<!-- Brand demo (see assets/user/css/demo/demo.css) -->
 
 	<a href="index.html"
 		class="navbar-brand app-brand demo d-lg-none py-0 mr-4"> <span
@@ -19,7 +19,7 @@
 	</span> <span class="app-brand-text demo font-weight-normal ml-2">Empire</span>
 	</a>
 
-	<!-- Sidenav toggle (see assets/css/demo/demo.css) -->
+	<!-- Sidenav toggle (see assets/user/css/demo/demo.css) -->
 	<div
 		class="layout-sidenav-toggle navbar-nav d-lg-none align-items-lg-center mr-auto">
 		<a class="nav-item nav-link px-0 mr-lg-4" href="javascript:"> <i
@@ -118,17 +118,17 @@
 					<div class="list-group list-group-flush">
 						<a href="javascript:"
 							class="list-group-item list-group-item-action media d-flex align-items-center">
-							<img src="assets/img/avatars/6-small.png"
+							<img src="assets/user/img/avatars/6-small.png"
 							class="d-block ui-w-40 rounded-circle" alt>
 							<div class="media-body ml-3">
 								<div class="text-dark line-height-condenced">Lorem ipsum
 									dolor consectetuer elit.</div>
 								<div class="text-light small mt-1">Josephin Doe
 									&nbsp;·&nbsp; 58m ago</div>
-							</div> <!-- <c:url value="/assets/admin/img/avatars/4-small.png"/> -->
+							</div> <!-- <c:url value="/assets/user/admin/img/avatars/4-small.png"/> -->
 						</a> <a href="javascript:"
 							class="list-group-item list-group-item-action media d-flex align-items-center">
-							<img src="<c:url value="/assets/admin/img/avatars/4-small.png"/>"
+							<img src="<c:url value="/assets/user/admin/img/avatars/4-small.png"/>"
 							class="d-block ui-w-40 rounded-circle" alt>
 							<div class="media-body ml-3">
 								<div class="text-dark line-height-condenced">Lorem ipsum
@@ -138,7 +138,7 @@
 							</div>
 						</a> <a href="javascript:"
 							class="list-group-item list-group-item-action media d-flex align-items-center">
-							<img src="<c:url value="/assets/admin/img/avatars/5-small.png"/>"
+							<img src="<c:url value="/assets/user/admin/img/avatars/5-small.png"/>"
 							class="d-block ui-w-40 rounded-circle" alt>
 							<div class="media-body ml-3">
 								<div class="text-dark line-height-condenced">Lorem ipsum
@@ -149,7 +149,7 @@
 						</a> <a href="javascript:"
 							class="list-group-item list-group-item-action media d-flex align-items-center">
 							<img
-							src="<c:url value="/assets/admin/img/avatars/11-small.png"/>"
+							src="<c:url value="/assets/user/admin/img/avatars/11-small.png"/>"
 							class="d-block ui-w-40 rounded-circle" alt>
 							<div class="media-body ml-3">
 								<div class="text-dark line-height-condenced">Lorem ipsum
@@ -167,7 +167,7 @@
 			</div>
 
 			<!-- Divider -->
-			<!-- <c:url value="/assets/admin/img/avatars/1.png"/> -->
+			<!-- <c:url value="/assets/user/admin/img/avatars/1.png"/> -->
 			<div
 				class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">|</div>
 			<div class="demo-navbar-user nav-item dropdown">
@@ -184,16 +184,15 @@
 				</a>
 				<div class="dropdown-menu dropdown-menu-right">
 					<a href="javascript:" class="dropdown-item"> <i
-						class="feather icon-user text-muted"></i> &nbsp; My profile
+						class="feather icon-user text-muted"></i> &nbsp; Thông tin cá nhân
 					</a> <a href="javascript:" class="dropdown-item"> <i
-						class="feather icon-mail text-muted"></i> &nbsp; Messages
+						class="feather icon-mail text-muted"></i> &nbsp; Tin nhắn
 					</a> <a href="javascript:" class="dropdown-item"> <i
-						class="feather icon-settings text-muted"></i> &nbsp; Account
-						settings
+						class="feather icon-settings text-muted"></i> &nbsp; Cài đặt tài khoản
 					</a>
 					<div class="dropdown-divider"></div>
 					<a href="<c:url value="/dang-xuat"/>" class="dropdown-item"> <i
-						class="feather icon-power text-danger"></i> &nbsp; Log Out
+						class="feather icon-power text-danger"></i> &nbsp; Đăng xuất
 					</a>
 				</div>
 			</div>

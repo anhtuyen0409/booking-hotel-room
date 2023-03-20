@@ -7,7 +7,7 @@
 <!-- [ Layout sidenav ] Start -->
 <div id="layout-sidenav"
 	class="layout-sidenav sidenav sidenav-vertical bg-white logo-dark">
-	<!-- Brand demo (see assets/css/demo/demo.css) -->
+	<!-- Brand demo (see assets/user/css/demo/demo.css) -->
 	<div class="app-brand demo">
 		<span class="app-brand-logo demo"> <img
 			src="<c:url value="/assets/admin/img/logo.png"/>" alt="Brand Logo"
