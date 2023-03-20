@@ -12,7 +12,7 @@ public class MapperServices implements RowMapper<Services>{
 		service.setId(rs.getInt("id"));
 		service.setName(rs.getString("name"));
 		service.setImg(rs.getString("img"));
-		service.setStatus(rs.getInt("status"));
+		service.setIs_delete(rs.getInt("is_delete"));
 		return service;
 	}
 

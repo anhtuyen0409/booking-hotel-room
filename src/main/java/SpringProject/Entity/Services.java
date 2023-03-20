@@ -1,21 +1,25 @@
 package SpringProject.Entity;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 public class Services {
 	private int id;
 	private String name;
 	private String img;
-	private int status;
+	private int is_delete;
+	private CommonsMultipartFile[] files;
 
 	public Services() {
 		super();
 	}
 
-	public Services(int id, String name, String img, int status) {
+	public Services(int id, String name, String img, int is_delete, CommonsMultipartFile[] files) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.img = img;
-		this.status = status;
+		this.is_delete = is_delete;
+		this.files = files;
 	}
 
 	public int getId() {
@@ -42,12 +46,20 @@ public class Services {
 		this.img = img;
 	}
 
-	public int getStatus() {
-		return status;
+	public int getIs_delete() {
+		return is_delete;
 	}
 
-	public void setStatus(int status) {
-		this.status = status;
+	public void setIs_delete(int is_delete) {
+		this.is_delete = is_delete;
+	}
+
+	public CommonsMultipartFile[] getFiles() {
+		return files;
+	}
+
+	public void setFiles(CommonsMultipartFile[] files) {
+		this.files = files;
 	}
 
 }
