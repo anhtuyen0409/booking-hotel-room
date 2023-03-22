@@ -125,7 +125,7 @@
 									dolor consectetuer elit.</div>
 								<div class="text-light small mt-1">Josephin Doe
 									&nbsp;·&nbsp; 58m ago</div>
-							</div> <!-- <c:url value="/assets/user/admin/img/avatars/4-small.png"/> -->
+							</div> 
 						</a> <a href="javascript:"
 							class="list-group-item list-group-item-action media d-flex align-items-center">
 							<img src="<c:url value="/assets/user/admin/img/avatars/4-small.png"/>"
@@ -167,7 +167,6 @@
 			</div>
 
 			<!-- Divider -->
-			<!-- <c:url value="/assets/user/admin/img/avatars/1.png"/> -->
 			<div
 				class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">|</div>
 			<div class="demo-navbar-user nav-item dropdown">

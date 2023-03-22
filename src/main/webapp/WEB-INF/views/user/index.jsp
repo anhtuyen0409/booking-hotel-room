@@ -120,7 +120,7 @@
 				<div class="col-lg-12">
 					<div class="section-title">
 
-						<h2>Discover Our Services</h2>
+						<h2>Dịch vụ của chúng tôi</h2>
 					</div>
 				</div>
 			</div>
@@ -149,17 +149,17 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="section-title">
-							<h2>New Rooms</h2>
+							<h2>Danh sách phòng mới</h2>
 							<br />
 						</div>
 					</div>
 
 					<c:forEach var="item" items="${newRooms }">
-						<div class="col-lg-3 col-md-6">
+						<div class="col-lg-3 col-md-4">
 							<div class="hp-room-item set-bg">
 								<img
 									src="<c:url value="/assets/user/img/room/${item.img }"/>"
-									alt="" style="width: 350px; height: 500px;">
+									alt="" style="width: 400px; height: 500px;">
 								<div class="hr-text">
 									<h3>${item.name }</h3>
 									<h2>
@@ -189,70 +189,14 @@
 		</div>
 	</section>
 	<!-- Home Room Section End -->
-
-	<!-- Testimonial Section Begin -->
-	<section class="testimonial-section spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="section-title">
-						<span>Testimonials</span>
-						<h2>What Customers Say?</h2>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2">
-					<div class="testimonial-slider owl-carousel">
-						<div class="ts-item">
-							<p>After a construction project took longer than expected, my
-								husband, my daughter and I needed a place to stay for a few
-								nights. As a Chicago resident, we know a lot about our city,
-								neighborhood and the types of housing options available and
-								absolutely love our vacation at Sona Hotel.</p>
-							<div class="ti-author">
-								<div class="rating">
-									<i class="icon_star"></i> <i class="icon_star"></i> <i
-										class="icon_star"></i> <i class="icon_star"></i> <i
-										class="icon_star-half_alt"></i>
-								</div>
-								<h5>- Alexander Vasquez</h5>
-							</div>
-							<!-- <c:url value="/assets/user/user/img/room/room-b1.jpg"/> img/testimonial-logo.png-->
-							<img src="<c:url value="/assets/user/img/testimonial-logo.png"/>"
-								alt="">
-						</div>
-						<div class="ts-item">
-							<p>After a construction project took longer than expected, my
-								husband, my daughter and I needed a place to stay for a few
-								nights. As a Chicago resident, we know a lot about our city,
-								neighborhood and the types of housing options available and
-								absolutely love our vacation at Sona Hotel.</p>
-							<div class="ti-author">
-								<div class="rating">
-									<i class="icon_star"></i> <i class="icon_star"></i> <i
-										class="icon_star"></i> <i class="icon_star"></i> <i
-										class="icon_star-half_alt"></i>
-								</div>
-								<h5>- Alexander Vasquez</h5>
-							</div>
-							<img src="<c:url value="/assets/user/img/testimonial-logo.png"/>"
-								alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Testimonial Section End -->
-
+	
 	<!-- Blog Section Begin -->
 	<section class="blog-section spad">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="section-title">
-						<h2>New Posts</h2>
+						<h2>Bài viết mới</h2>
 					</div>
 				</div>
 				<div class="row">

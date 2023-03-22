@@ -17,16 +17,16 @@
 			<div class="card-body">
 				<div class="table-responsive">
 					<table class="table table-bordered" id="dataTable" width="100%"
-						cellspacing="0">
+						cellspacing="0" style="table-layout:fixed;">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>Tên người dùng</th>
-								<th>Ngày sinh</th>
-								<th>Số điện thoại</th>
-								<th>Email</th>
-								<th>Mật khẩu</th>
-								<th>Loại tài khoản</th>
+								<th style="width: 2%;">ID</th>
+								<th style="width: 10%;">Tên người dùng</th>
+								<th style="width: 10%;">Ngày sinh</th>
+								<th style="width: 10%;">Số điện thoại</th>
+								<th style="width: 10%;">Email</th>
+								<th style="width: 44%;">Mật khẩu</th>
+								<!-- <th>Loại tài khoản</th>-->
 								<th>Tác vụ</th>
 							</tr>
 						</thead>
@@ -34,23 +34,20 @@
 						<tbody>
 							<c:forEach var="item" items="${users }">
 								<tr>
-									<td>${item.id }</td>
+									<td style="white-space: pre-wrap;">${item.id }
 									<td style="white-space: pre-wrap;">${item.name }</td>
 									<td style="white-space: pre-wrap;">${item.birthday }</td>
 									<td style="white-space: pre-wrap;">${item.phone }</td>
 									<td style="white-space: pre-wrap;">${item.email }</td>
-									<td style="white-space: pre-wrap;">${item.password }</td>
-									<td style="white-space: pre-wrap;">${item.type_account }</td>
+									<td>${item.password }</td>
+									<!-- <td style="white-space: pre-wrap;">${item.type_account }</td>-->
 									<td>
-
-										<button type="button" class="btn btn-light">
-											<a style="text-decoration: none;" href="">Chi tiết 
-										</button>
+										<br/>
 										<button type="button" class="btn btn-light">
 											<a style="text-decoration: none;" href="">Sửa 
 										</button>
 										<button type="button" class="btn btn-light">
-											<a style="text-decoration: none;" href="">Xoá 
+											<a style="text-decoration: none;" href="<c:url value="/quan-tri/id-user=${item.id}"/>">Xoá 
 										</button>
 
 									</td>

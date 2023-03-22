@@ -9,6 +9,13 @@ import SpringProject.Entity.Users;
 public interface IUsers {
 	@Autowired
 	public int addUser(Users user);
+
 	@Autowired
 	public Users checkUser(Users user);
+
+	@Autowired
+	public Users getUser(int id);
+
+	@Autowired
+	public int updateUser(Users user);
 }

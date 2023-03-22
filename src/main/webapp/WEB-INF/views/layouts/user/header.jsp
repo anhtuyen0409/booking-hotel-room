@@ -16,8 +16,8 @@
 	</div>
 	<div class="header-configure-area">
 		<div class="language-option">
-			<img src="<c:url value="/assets/user/user/img/flag.jpg"/>" alt=""> <span>EN
-				<i class="fa fa-angle-down"></i>
+			<img src="<c:url value="/assets/user/user/img/flag.jpg"/>" alt="">
+			<span>EN <i class="fa fa-angle-down"></i>
 			</span>
 			<div class="flag-dropdown">
 				<ul>
@@ -54,7 +54,7 @@
 	<div class="top-nav">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8">
+				<div class="col-lg-7">
 					<ul class="tn-left">
 						<li><i class="fa fa-phone"></i> 039 442 0076</li>
 						<li><i class="fa fa-envelope"></i>
@@ -62,10 +62,11 @@
 					</ul>
 				</div>
 
-				<div class="col-lg-4">
+				<div class="col-lg-5">
 					<div class="menu-item">
 						<div class="container">
 							<div class="row">
+
 								<div class="nav-menu">
 									<nav class="mainmenu">
 										<ul>
@@ -74,9 +75,14 @@
 												<li><a href="<c:url value="/dang-ky"/>">Đăng ký</a></li>
 											</c:if>
 											<c:if test="${not empty LoginInfo }">
-												<li><a href="<c:url value="/thong-tin-ca-nhan"/>">Xin
-														chào ${LoginInfo.name }!</a></li>
+												<img src="<c:url value="/assets/user/img/avatar/${LoginInfo.avatar}"/>"
+													class="rounded-circle" style="width: 50px;" alt="Avatar" />
+												<li><a href="<c:url value="/cap-nhat-thong-tin-ca-nhan/id-user=${LoginInfo.id}"/>">Xin
+														chào ${LoginInfo.name }!</a>
+												
 												<li><a href="<c:url value="/dang-xuat"/>">Đăng xuất</a></li>
+												</li>
+
 											</c:if>
 
 										</ul>

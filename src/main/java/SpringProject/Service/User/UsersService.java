@@ -24,12 +24,23 @@ public class UsersService implements IUsers {
 		if (user != null) {
 			if (BCrypt.checkpw(pass, user.getPassword())) {
 				return user;
-			}
-			else {
+			} else {
 				return null;
 			}
 		}
 		return null;
+	}
+
+	public Users getUser(int id) {
+		Users user = usersDAO.getUser(id);
+		if (user != null) {
+			return user;
+		}
+		return null;
+	}
+
+	public int updateUser(Users user) {
+		return usersDAO.updateUser(user);
 	}
 
 }

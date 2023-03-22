@@ -2,31 +2,39 @@ package SpringProject.Entity;
 
 import java.sql.Date;
 
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
+
 public class Users {
 	private int id;
 	private String name;
+	private String avatar;
 	private Date birthday;
 	private String phone;
 	private String email;
 	private String password;
 	private String confirm_password;
 	private String type_account;
+	private int is_delete;
+	private CommonsMultipartFile[] files;
 
 	public Users() {
 		super();
 	}
 
-	public Users(int id, String name, Date birthday, String phone, String email, String password,
-			String confirm_password, String type_account) {
+	public Users(int id, String name, String avatar, Date birthday, String phone, String email, String password,
+			String confirm_password, String type_account, int is_delete, CommonsMultipartFile[] files) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.avatar = avatar;
 		this.birthday = birthday;
 		this.phone = phone;
 		this.email = email;
 		this.password = password;
 		this.confirm_password = confirm_password;
 		this.type_account = type_account;
+		this.is_delete = is_delete;
+		this.files = files;
 	}
 
 	public int getId() {
@@ -43,6 +51,14 @@ public class Users {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 
 	public Date getBirthday() {
@@ -91,6 +107,22 @@ public class Users {
 
 	public void setType_account(String type_account) {
 		this.type_account = type_account;
+	}
+
+	public int getIs_delete() {
+		return is_delete;
+	}
+
+	public void setIs_delete(int is_delete) {
+		this.is_delete = is_delete;
+	}
+
+	public CommonsMultipartFile[] getFiles() {
+		return files;
+	}
+
+	public void setFiles(CommonsMultipartFile[] files) {
+		this.files = files;
 	}
 
 }
