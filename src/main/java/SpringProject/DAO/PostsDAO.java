@@ -10,6 +10,7 @@ import SpringProject.Entity.Posts;
 
 @Repository
 public class PostsDAO extends BaseDAO {
+	// lấy danh sách bài viết
 	public List<Posts> GetDataPosts() {
 		List<Posts> list = new ArrayList<Posts>();
 		String sql = "SELECT * FROM posts WHERE is_delete = 0";
@@ -17,9 +18,26 @@ public class PostsDAO extends BaseDAO {
 		return list;
 	}
 
+	// lấy bài viết mới nhất
 	public List<Posts> GetDataNewPosts() {
 		List<Posts> list = new ArrayList<Posts>();
 		String sql = "SELECT * FROM posts WHERE is_delete = 0 ORDER BY id DESC LIMIT 3";
+		list = _jdbcTemplate.query(sql, new MapperPosts());
+		return list;
+	}
+
+	// phân trang bài viết
+	public List<Posts> GetDataPostsPaginate(int start, int totalPage) {
+		List<Posts> list = new ArrayList<Posts>();
+		String sql = "SELECT * FROM posts WHERE is_delete = 0 LIMIT " + start + ", " + totalPage;
+		list = _jdbcTemplate.query(sql, new MapperPosts());
+		return list;
+	}
+
+	// lấy chi tiết bài viết
+	public List<Posts> GetDataPost(int id) {
+		List<Posts> list = new ArrayList<Posts>();
+		String sql = "SELECT * FROM posts WHERE id = " + id;
 		list = _jdbcTemplate.query(sql, new MapperPosts());
 		return list;
 	}

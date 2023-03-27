@@ -27,13 +27,13 @@
 	<section class="blog-section blog-page spad">
 		<div class="container">
 			<div class="row">
-				<c:forEach var="item" items="${posts }">
+				<c:forEach var="item" items="${postsPaginate }">
 					<div class="col-lg-4 col-md-6">
 						<div class="blog-item set-bg"
 							data-setbg="<c:url value="/assets/user/img/post/${item.img_1 }"/>">
 							<div class="bi-text">
 								<h4>
-									<a href="./blog-details.html">${item.title }</a>
+									<a href="<c:url value="/bai-viet/id-post=${item.id }"/>">${item.title }</a>
 								</h4>
 							</div>
 						</div>
@@ -41,8 +41,17 @@
 				</c:forEach>
 				<div class="col-lg-12">
 					<div class="room-pagination">
-						<a href="#">1</a> <a href="#">2</a> <a href="#">Next <i
-							class="fa fa-long-arrow-right"></i></a>
+						<c:forEach var="item" begin="1" end="${paginateInfo.totalPage }"
+							varStatus="loop">
+							<c:if test="${(loop.index) == paginateInfo.currentPage}">
+								<a
+									href="<c:url value="/bai-viet/page=${loop.index }"/>">${loop.index}</a>
+							</c:if>
+							<c:if test="${(loop.index) != paginateInfo.currentPage}">
+								<a
+									href="<c:url value="/bai-viet/page=${loop.index }"/>">${loop.index}</a>
+							</c:if>
+						</c:forEach>
 					</div>
 				</div>
 			</div>

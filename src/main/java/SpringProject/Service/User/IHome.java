@@ -30,6 +30,9 @@ public interface IHome {
 	public List<Posts> GetDataPosts();
 
 	@Autowired
+	public List<Posts> GetDataPostsPaginate(int start, int totalPage);
+
+	@Autowired
 	public List<Posts> GetDataNewPosts();
 
 	@Autowired
@@ -55,4 +58,7 @@ public interface IHome {
 
 	@Autowired
 	public List<Rooms> GetDataRoom(int id);
+
+	@Autowired
+	public List<Posts> GetDataPost(int id);
 }

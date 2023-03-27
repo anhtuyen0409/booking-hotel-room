@@ -90,4 +90,12 @@ public class HomeService implements IHome {
 	public List<Rooms> GetDataRoom(int id) {
 		return roomsDao.GetDataRoom(id);
 	}
+
+	public List<Posts> GetDataPostsPaginate(int start, int totalPage) {
+		return postsDao.GetDataPostsPaginate(start, totalPage);
+	}
+
+	public List<Posts> GetDataPost(int id) {
+		return postsDao.GetDataPost(id);
+	}
 }

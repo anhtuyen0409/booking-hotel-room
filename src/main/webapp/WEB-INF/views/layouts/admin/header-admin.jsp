@@ -41,7 +41,7 @@
 			<label class="nav-item navbar-text navbar-search-box p-0 active">
 				<i class="feather icon-search navbar-icon align-middle"></i> <span
 				class="navbar-search-input pl-2"> <input type="text"
-					class="form-control navbar-text mx-2" placeholder="Search...">
+					class="form-control navbar-text mx-2" placeholder="Tìm kiếm...">
 			</span>
 			</label>
 		</div>
