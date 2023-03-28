@@ -20,8 +20,6 @@ public class MapperRooms implements RowMapper<Rooms>{
 		room.setDescription(rs.getString("description"));
 		room.setStatus(rs.getInt("status"));
 		room.setIs_delete(rs.getInt("is_delete"));
-		room.setCreate_at(rs.getDate("create_at"));
-		room.setUpdate_at(rs.getDate("update_at"));
 		return room;
 	}
 

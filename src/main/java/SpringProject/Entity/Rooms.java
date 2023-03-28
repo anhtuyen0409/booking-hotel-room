@@ -1,6 +1,6 @@
 package SpringProject.Entity;
 
-import java.sql.Date;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 public class Rooms {
 	private int id;
@@ -14,15 +14,14 @@ public class Rooms {
 	private String description;
 	private int status;
 	private int is_delete;
-	private Date create_at;
-	private Date update_at;
+	private CommonsMultipartFile[] files;
 
 	public Rooms() {
 		super();
 	}
 
 	public Rooms(int id, int id_typeroom, String name, String img, int price, int sizes, int guests, String services,
-			String description, int status, int is_delete, Date create_at, Date update_at) {
+			String description, int status, int is_delete, CommonsMultipartFile[] files) {
 		super();
 		this.id = id;
 		this.id_typeroom = id_typeroom;
@@ -35,8 +34,8 @@ public class Rooms {
 		this.description = description;
 		this.status = status;
 		this.is_delete = is_delete;
-		this.create_at = create_at;
-		this.update_at = update_at;
+		this.files = files;
+
 	}
 
 	public int getId() {
@@ -127,20 +126,11 @@ public class Rooms {
 		this.is_delete = is_delete;
 	}
 
-	public Date getCreate_at() {
-		return create_at;
+	public CommonsMultipartFile[] getFiles() {
+		return files;
 	}
 
-	public void setCreate_at(Date create_at) {
-		this.create_at = create_at;
+	public void setFiles(CommonsMultipartFile[] files) {
+		this.files = files;
 	}
-
-	public Date getUpdate_at() {
-		return update_at;
-	}
-
-	public void setUpdate_at(Date update_at) {
-		this.update_at = update_at;
-	}
-
 }
