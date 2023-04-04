@@ -12,7 +12,7 @@
 		<span class="app-brand-logo demo"> <img
 			src="<c:url value="/assets/admin/img/logo.png"/>" alt="Brand Logo"
 			class="img-fluid">
-		</span> <a href="index.html"
+		</span> <a href="<c:url value="/quan-tri/"/>"
 			class="app-brand-text demo sidenav-text font-weight-normal ml-2">Trang
 			Admin</a> <a href="javascript:"
 			class="layout-sidenav-toggle sidenav-link text-large ml-auto"> <i
@@ -39,11 +39,13 @@
 				<div>Giao diện</div>
 		</a>
 			<ul class="sidenav-menu">
-				<li class="sidenav-item"><a href="<c:url value="/quan-tri/danh-sach-menu"/>"
+				<li class="sidenav-item"><a
+					href="<c:url value="/quan-tri/danh-sach-menu"/>"
 					class="sidenav-link">
 						<div>Menus</div>
 				</a></li>
-				<li class="sidenav-item"><a href="<c:url value="/quan-tri/danh-sach-slides"/>"
+				<li class="sidenav-item"><a
+					href="<c:url value="/quan-tri/danh-sach-slides"/>"
 					class="sidenav-link">
 						<div>Slides</div>
 				</a></li>
@@ -57,11 +59,13 @@
 				<div>Phòng nghỉ</div>
 		</a>
 			<ul class="sidenav-menu">
-				<li class="sidenav-item"><a href="<c:url value="/quan-tri/danh-sach-loai-phong"/>"
+				<li class="sidenav-item"><a
+					href="<c:url value="/quan-tri/danh-sach-loai-phong"/>"
 					class="sidenav-link">
 						<div>Type Rooms</div>
 				</a></li>
-				<li class="sidenav-item"><a href="<c:url value="/quan-tri/danh-sach-phong"/>"
+				<li class="sidenav-item"><a
+					href="<c:url value="/quan-tri/danh-sach-phong"/>"
 					class="sidenav-link">
 						<div>Rooms</div>
 				</a></li>
@@ -75,7 +79,8 @@
 				<div>Bài viết</div>
 		</a>
 			<ul class="sidenav-menu">
-				<li class="sidenav-item"><a href="<c:url value="/quan-tri/danh-sach-bai-viet"/>"
+				<li class="sidenav-item"><a
+					href="<c:url value="/quan-tri/danh-sach-bai-viet"/>"
 					class="sidenav-link">
 						<div>Posts</div>
 				</a></li>
@@ -88,7 +93,8 @@
 				<div>Dịch vụ</div>
 		</a>
 			<ul class="sidenav-menu">
-				<li class="sidenav-item"><a href="<c:url value="/quan-tri/danh-sach-dich-vu"/>"
+				<li class="sidenav-item"><a
+					href="<c:url value="/quan-tri/danh-sach-dich-vu"/>"
 					class="sidenav-link">
 						<div>Services</div>
 				</a></li>
@@ -101,9 +107,24 @@
 				<div>Người dùng</div>
 		</a>
 			<ul class="sidenav-menu">
-				<li class="sidenav-item"><a href="<c:url value="/quan-tri/danh-sach-nguoi-dung"/>"
+				<li class="sidenav-item"><a
+					href="<c:url value="/quan-tri/danh-sach-nguoi-dung"/>"
 					class="sidenav-link">
 						<div>Users</div>
+				</a></li>
+
+			</ul></li>
+
+		<!--  yêu cầu đặt phòng -->
+		<li class="sidenav-item"><a href="javascript:"
+			class="sidenav-link sidenav-toggle">
+				<div>Đặt phòng</div>
+		</a>
+			<ul class="sidenav-menu">
+				<li class="sidenav-item"><a
+					href="<c:url value="/quan-tri/danh-sach-dat-phong"/>"
+					class="sidenav-link">
+						<div>Booking</div>
 				</a></li>
 
 			</ul></li>

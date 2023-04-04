@@ -20,6 +20,7 @@
 			<form:input type="text" path="url" id="form3Example8"
 				class="form-control form-control-lg"/>
 			<input type="submit" value="Thêm">
+			
 		</form:form>
 	</div>
 

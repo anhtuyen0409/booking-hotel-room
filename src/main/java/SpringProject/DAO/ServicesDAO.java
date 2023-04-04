@@ -49,4 +49,11 @@ public class ServicesDAO extends BaseDAO {
 		int update = _jdbcTemplate.update(sql);
 		return update;
 	}
+
+	// đếm số dịch vụ
+	public int countService() {
+		String sql = "SELECT COUNT(*) FROM services WHERE is_delete = 0";
+		int result = _jdbcTemplate.queryForObject(sql, Integer.class);
+		return result;
+	}
 }

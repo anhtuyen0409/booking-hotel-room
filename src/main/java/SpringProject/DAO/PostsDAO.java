@@ -76,4 +76,11 @@ public class PostsDAO extends BaseDAO {
 		int update = _jdbcTemplate.update(sql);
 		return update;
 	}
+
+	// đếm số bài viết
+	public int countPost() {
+		String sql = "SELECT COUNT(*) FROM posts WHERE is_delete = 0";
+		int result = _jdbcTemplate.queryForObject(sql, Integer.class);
+		return result;
+	}
 }

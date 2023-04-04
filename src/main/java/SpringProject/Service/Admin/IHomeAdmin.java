@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import SpringProject.Entity.Booking;
 import SpringProject.Entity.Menus;
 import SpringProject.Entity.Posts;
 import SpringProject.Entity.Rooms;
@@ -35,4 +36,7 @@ public interface IHomeAdmin {
 
 	@Autowired
 	public List<Users> GetDataUsers();
+	
+	@Autowired
+	public List<Booking> GetDataBooking();
 }

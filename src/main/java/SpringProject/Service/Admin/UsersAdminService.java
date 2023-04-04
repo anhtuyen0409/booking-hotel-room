@@ -14,4 +14,8 @@ public class UsersAdminService implements IUsersAdmin {
 		return userDAO.deleteUser(id);
 	}
 
+	public int countUser() {
+		return userDAO.countUser();
+	}
+
 }

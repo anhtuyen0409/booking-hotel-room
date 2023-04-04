@@ -18,4 +18,7 @@ public interface IPostsAdmin {
 
 	@Autowired
 	public int updatePost(Posts post);
+	
+	@Autowired
+	public int countPost();
 }

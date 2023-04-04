@@ -41,7 +41,7 @@
 						</thead>
 
 						<tbody>
-							<c:forEach var="item" items="${rooms }">
+							<c:forEach var="item" items="${roomsPaginate }">
 								<tr>
 									<td>${item.id }</td>
 									<td style="white-space: pre-wrap;">${item.name }</td>
@@ -49,7 +49,9 @@
 										style="width: 100px; height: 100px;"
 										src="<c:url value="/assets/user/img/room/${item.img }"/>"
 										alt="Alternate Text" /></td>
-									<td style="white-space: pre-wrap;"><fmt:formatNumber type="number" groupingUsed="true" value="${item.price }" /> đ</td>
+									<td style="white-space: pre-wrap;"><fmt:formatNumber
+											type="number" groupingUsed="true" value="${item.price }" />
+										đ</td>
 									<td style="white-space: pre-wrap;">${item.sizes }</td>
 									<td style="white-space: pre-wrap;">${item.guests }</td>
 									<td style="white-space: pre-wrap;">${item.services }</td>
@@ -62,10 +64,18 @@
 											<a style="text-decoration: none;" href="">Chi tiết 
 										</button>
 										<button type="button" class="btn btn-light">
-											<a style="text-decoration: none;" href="<c:url value="/quan-tri/update-room/id-room=${item.id}"/>">Sửa 
+											<a style="text-decoration: none;"
+												href="<c:url value="/quan-tri/update-room/id-room=${item.id}"/>">Sửa
+
+
+											
 										</button>
 										<button type="button" class="btn btn-light">
-											<a style="text-decoration: none;" href="<c:url value="/quan-tri/id-room=${item.id}"/>">Xoá 
+											<a style="text-decoration: none;"
+												href="<c:url value="/quan-tri/id-room=${item.id}"/>">Xoá
+
+
+											
 										</button>
 
 									</td>
@@ -85,6 +95,24 @@
 				</div>
 			</div>
 		</div>
+
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<c:forEach var="item" begin="1" end="${paginateInfo.totalPage }"
+					varStatus="loop">
+					<c:if test="${(loop.index) == paginateInfo.currentPage}">
+						<li class="page-item"><a class="page-link"
+							href="<c:url value="/quan-tri/danh-sach-phong/page=${loop.index }"/>">${loop.index}</a></li>
+					</c:if>
+					<c:if test="${(loop.index) != paginateInfo.currentPage}">
+						<li class="page-item"><a class="page-link"
+							href="<c:url value="/quan-tri/danh-sach-phong/page=${loop.index }"/>">${loop.index}</a></li>
+					</c:if>
+				</c:forEach>
+			</ul>
+		</nav>
+
+
 		<!-- <div class="dataTables_paginate paging_simple_numbers"
 			id="dataTable_paginate">@Html.PagedListPager(Model, page =>
 			Url.Action("Index", new { page }))</div>-->

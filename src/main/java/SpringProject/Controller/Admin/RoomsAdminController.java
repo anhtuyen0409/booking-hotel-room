@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import SpringProject.DTO.PaginatesDTO;
 import SpringProject.Entity.Rooms;
 import SpringProject.Service.Admin.HomeAdminService;
 import SpringProject.Service.Admin.RoomsAdminService;
+import SpringProject.Service.User.PaginatesService;
 
 @Controller
 public class RoomsAdminController {
@@ -26,11 +28,31 @@ public class RoomsAdminController {
 	HomeAdminService homeAdminService;
 	@Autowired
 	RoomsAdminService roomAdminService;
+	@Autowired
+	private PaginatesService paginateService;
+	
+	private int totalPage = 2;
 
 	@RequestMapping(value = "/quan-tri/danh-sach-phong")
 	public ModelAndView RoomList() {
+		int totalData = homeAdminService.GetDataRooms().size();
+		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalPage, 1);
+		_myShare.addObject("paginateInfo", paginateInfo);
+		_myShare.addObject("roomsPaginate",
+				roomAdminService.GetDataRoomsPaginate(paginateInfo.getStart(), totalPage));
 		_myShare.setViewName("admin/rooms-admin");
-		_myShare.addObject("rooms", homeAdminService.GetDataRooms());
+		
+		return _myShare;
+	}
+	
+	@RequestMapping(value = "/quan-tri/danh-sach-phong/page={currentPage}")
+	public ModelAndView RoomPaginate(@PathVariable int currentPage) {
+		int totalData = homeAdminService.GetDataRooms().size();
+		PaginatesDTO paginateInfo = paginateService.GetInfoPaginates(totalData, totalPage, currentPage);
+		_myShare.addObject("paginateInfo", paginateInfo);
+		_myShare.addObject("roomsPaginate",
+				roomAdminService.GetDataRoomsPaginate(paginateInfo.getStart(), totalPage));
+		_myShare.setViewName("admin/rooms-admin");
 		return _myShare;
 	}
 

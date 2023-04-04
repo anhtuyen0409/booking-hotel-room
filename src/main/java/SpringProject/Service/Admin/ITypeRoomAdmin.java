@@ -18,5 +18,8 @@ public interface ITypeRoomAdmin {
 
 	@Autowired
 	public int updateTypeRoom(TypeRoom typeRoom);
+	
+	@Autowired
+	public int countTypeRoom();
 
 }

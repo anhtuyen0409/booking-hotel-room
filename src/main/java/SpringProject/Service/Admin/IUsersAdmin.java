@@ -7,4 +7,6 @@ import org.springframework.stereotype.Service;
 public interface IUsersAdmin {
 	@Autowired
 	public int deleteUser(int id);
+	@Autowired
+	public int countUser();
 }

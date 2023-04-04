@@ -61,4 +61,8 @@ public interface IHome {
 
 	@Autowired
 	public List<Posts> GetDataPost(int id);
+	
+	@Autowired
+	public List<Rooms> FindRooms(int id_typeRoom);
+	
 }

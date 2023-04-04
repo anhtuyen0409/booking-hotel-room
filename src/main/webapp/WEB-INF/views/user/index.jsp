@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <title>TM Luxury - Đặt phòng khách sạn giá rẻ</title>
 <body>
@@ -28,7 +29,7 @@
 				<div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
 					<div class="booking-form">
 						<h3>Booking Your Hotel</h3>
-						<form action="#">
+						<form action="">
 							<div class="check-date">
 								<label for="date-in">Check In:</label> <input type="text"
 									class="date-input" id="date-in"> <i
@@ -43,21 +44,16 @@
 								<label for="guest">Type Room:</label> <select id="guest">
 
 									<c:forEach var="item" items="${typeRoom }">
-										<option value="">${item.name }</option>
+										<option value="${item.id }">${item.name }</option>
 									</c:forEach>
 
 								</select>
 							</div>
-							<div class="select-option">
-								<label for="room">Guests:</label> <select id="room">
-									<option value="">1</option>
-									<option value="">2</option>
-									<option value="">3</option>
-									<option value="">4</option>
-								</select>
-							</div>
-							<button type="submit">Check Availability</button>
+							
+							<button type="submit">Check Availability</button> 
+				
 						</form>
+
 					</div>
 				</div>
 			</div>
@@ -157,8 +153,7 @@
 					<c:forEach var="item" items="${newRooms }">
 						<div class="col-lg-3 col-md-4">
 							<div class="hp-room-item set-bg">
-								<img
-									src="<c:url value="/assets/user/img/room/${item.img }"/>"
+								<img src="<c:url value="/assets/user/img/room/${item.img }"/>"
 									alt="" style="width: 400px; height: 500px;">
 								<div class="hr-text">
 									<h3>${item.name }</h3>
@@ -189,7 +184,7 @@
 		</div>
 	</section>
 	<!-- Home Room Section End -->
-	
+
 	<!-- Blog Section Begin -->
 	<section class="blog-section spad">
 		<div class="container">
@@ -204,10 +199,10 @@
 						<div class="col-lg-4">
 							<div class="blog-item set-bg">
 								<img src="<c:url value="/assets/user/img/post/${item.img_1 }"/>"
-								alt="" style="width: 400px;height: 450px;">
+									alt="" style="width: 400px; height: 450px;">
 								<div class="bi-text">
 									<h4>
-										<a href="#">${item.title }</a>
+										<a href="<c:url value="/bai-viet/id-post=${item.id }"/>">${item.title }</a>
 									</h4>
 								</div>
 							</div>

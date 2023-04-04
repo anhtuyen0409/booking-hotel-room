@@ -31,4 +31,8 @@ public class PostsAdminService implements IPostsAdmin {
 		return postDAO.updatePost(post);
 	}
 
+	public int countPost() {
+		return postDAO.countPost();
+	}
+
 }

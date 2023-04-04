@@ -14,7 +14,7 @@ public class PostsController extends BaseController {
 	@Autowired
 	private PaginatesService paginateService;
 
-	private int totalPage = 6;
+	private int totalPage = 3;
 
 	@RequestMapping(value = "/bai-viet")
 	public ModelAndView Posts() {

@@ -31,4 +31,8 @@ public class TypeRoomAdminService implements ITypeRoomAdmin {
 		return typeRoomDAO.updateTypeRoom(typeRoom);
 	}
 
+	public int countTypeRoom() {
+		return typeRoomDAO.countTypeRoom();
+	}
+
 }

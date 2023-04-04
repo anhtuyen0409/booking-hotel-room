@@ -98,4 +98,10 @@ public class HomeService implements IHome {
 	public List<Posts> GetDataPost(int id) {
 		return postsDao.GetDataPost(id);
 	}
+
+	public List<Rooms> FindRooms(int id_typeRoom) {
+		return roomsDao.FindRooms(id_typeRoom);
+	}
+
+	
 }

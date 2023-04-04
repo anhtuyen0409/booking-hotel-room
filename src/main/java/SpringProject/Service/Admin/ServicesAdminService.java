@@ -31,4 +31,8 @@ public class ServicesAdminService implements IServicesAdmin {
 		return serviceDAO.updateService(service);
 	}
 
+	public int countService() {
+		return serviceDAO.countService();
+	}
+
 }

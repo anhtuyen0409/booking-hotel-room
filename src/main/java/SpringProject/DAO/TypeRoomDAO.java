@@ -50,4 +50,11 @@ public class TypeRoomDAO extends BaseDAO {
 		int update = _jdbcTemplate.update(sql);
 		return update;
 	}
+
+	// đếm số loại phòng
+	public int countTypeRoom() {
+		String sql = "SELECT COUNT(*) FROM type_room WHERE is_delete = 0";
+		int result = _jdbcTemplate.queryForObject(sql, Integer.class);
+		return result;
+	}
 }

@@ -18,4 +18,7 @@ public interface IServicesAdmin {
 
 	@Autowired
 	public int updateService(Services service);
+	
+	@Autowired
+	public int countService();
 }

@@ -1,5 +1,7 @@
 package SpringProject.Service.Admin;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,4 +20,10 @@ public interface IRoomsAdmin {
 
 	@Autowired
 	public int updateRoom(Rooms room);
+
+	@Autowired
+	public List<Rooms> GetDataRoomsPaginate(int start, int totalPage);
+	
+	@Autowired
+	public int countRoom();
 }

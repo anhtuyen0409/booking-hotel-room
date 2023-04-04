@@ -2,9 +2,19 @@ package SpringProject.DAO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import org.springframework.stereotype.Repository;
 
+import SpringProject.Entity.Booking;
 import SpringProject.Entity.MapperRooms;
 import SpringProject.Entity.Rooms;
 
@@ -13,7 +23,7 @@ public class RoomsDAO extends BaseDAO {
 	// lấy danh sách phòng normal
 	public List<Rooms> GetDataNormalRoom() {
 		List<Rooms> list = new ArrayList<Rooms>();
-		String sql = "SELECT * FROM rooms WHERE id_typeroom = 1 AND is_delete = 0";
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 1 AND is_delete = 0 AND status = 0";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
@@ -21,7 +31,8 @@ public class RoomsDAO extends BaseDAO {
 	// phân trang phòng normal
 	public List<Rooms> GetDataNormalRoomPaginate(int start, int totalPage) {
 		List<Rooms> list = new ArrayList<Rooms>();
-		String sql = "SELECT * FROM rooms WHERE id_typeroom = 1 LIMIT " + start + ", " + totalPage;
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 1 AND status = 0 AND is_delete = 0 LIMIT " + start + ", "
+				+ totalPage;
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
@@ -29,7 +40,7 @@ public class RoomsDAO extends BaseDAO {
 	// lấy danh sách phòng vip
 	public List<Rooms> GetDataVipRoom() {
 		List<Rooms> list = new ArrayList<Rooms>();
-		String sql = "SELECT * FROM rooms WHERE id_typeroom = 2 AND is_delete = 0";
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 2 AND is_delete = 0 AND status = 0";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
@@ -37,7 +48,8 @@ public class RoomsDAO extends BaseDAO {
 	// phân trang phòng vip
 	public List<Rooms> GetDataVipRoomPaginate(int start, int totalPage) {
 		List<Rooms> list = new ArrayList<Rooms>();
-		String sql = "SELECT * FROM rooms WHERE id_typeroom = 2 LIMIT " + start + ", " + totalPage;
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 2 AND status = 0 AND is_delete = 0 LIMIT " + start + ", "
+				+ totalPage;
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
@@ -45,7 +57,7 @@ public class RoomsDAO extends BaseDAO {
 	// lấy danh sách phòng homestay
 	public List<Rooms> GetDataHomestayRoom() {
 		List<Rooms> list = new ArrayList<Rooms>();
-		String sql = "SELECT * FROM rooms WHERE id_typeroom = 3 AND is_delete = 0";
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 3 AND is_delete = 0 AND status = 0";
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
@@ -53,7 +65,8 @@ public class RoomsDAO extends BaseDAO {
 	// phân trang homestay
 	public List<Rooms> GetDataHomestayRoomPaginate(int start, int totalPage) {
 		List<Rooms> list = new ArrayList<Rooms>();
-		String sql = "SELECT * FROM rooms WHERE id_typeroom = 3 LIMIT " + start + ", " + totalPage;
+		String sql = "SELECT * FROM rooms WHERE id_typeroom = 3 AND status = 0 AND is_delete = 0 LIMIT " + start + ", "
+				+ totalPage;
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
@@ -78,6 +91,14 @@ public class RoomsDAO extends BaseDAO {
 	public List<Rooms> GetDataRooms() {
 		List<Rooms> list = new ArrayList<Rooms>();
 		String sql = "SELECT * FROM rooms WHERE is_delete = 0";
+		list = _jdbcTemplate.query(sql, new MapperRooms());
+		return list;
+	}
+
+	// phân trang toàn bộ phòng
+	public List<Rooms> GetDataRoomsPaginate(int start, int totalPage) {
+		List<Rooms> list = new ArrayList<Rooms>();
+		String sql = "SELECT * FROM rooms WHERE is_delete = 0  AND status = 0 LIMIT " + start + ", " + totalPage;
 		list = _jdbcTemplate.query(sql, new MapperRooms());
 		return list;
 	}
@@ -118,4 +139,75 @@ public class RoomsDAO extends BaseDAO {
 		int update = _jdbcTemplate.update(sql);
 		return update;
 	}
+
+	// tìm kiếm phòng trống
+	public List<Rooms> FindRooms(int id_typeRoom) {
+		List<Rooms> list = new ArrayList<Rooms>();
+		String sql = "SELECT * FROM rooms WHERE is_delete = 0 AND status = 0 AND id_typeroom = " + id_typeRoom;
+		list = _jdbcTemplate.query(sql, new MapperRooms());
+		return list;
+	}
+
+	// đặt phòng
+	public int addBooking(Booking booking) {
+		String sql = "INSERT INTO booking (id_user, email, id_room, name_user, name_room, checkin, checkout, total, is_delete, status) "
+				+ "VALUES ('" + booking.getId_user() + "', '" + booking.getEmail() + "', '" + booking.getId_room()
+				+ "', '" + booking.getName_user() + "', '" + booking.getName_room() + "', '" + booking.getCheckin()
+				+ "', '" + booking.getCheckout() + "', '" + booking.getTotal() + "', '0', N'chưa thanh toán')";
+		int insert = _jdbcTemplate.update(sql);
+		try {
+			sendText(booking.getEmail().toString());
+		} catch (AddressException e) {
+			e.printStackTrace();
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		}
+		/*
+		 * if(insert > 0) { String sql2 = "UPDATE rooms SET status = '1' WHERE id = " +
+		 * booking.getId_room(); _jdbcTemplate.execute(sql2); }
+		 */
+		return insert;
+	}
+
+	// đếm số người dùng
+	public int countRoom() {
+		String sql = "SELECT COUNT(*) FROM rooms WHERE is_delete = 0";
+		int result = _jdbcTemplate.queryForObject(sql, Integer.class);
+		return result;
+	}
+
+	public static void sendText(String email) throws AddressException, MessagingException {
+		Properties mailServerProperties;
+		Session getMailSession;
+		MimeMessage mailMessage;
+
+		// Step1: setup Mail Server
+		mailServerProperties = System.getProperties();
+		mailServerProperties.put("mail.smtp.port", "587");
+		mailServerProperties.put("mail.smtp.auth", "true");
+		mailServerProperties.put("mail.smtp.starttls.enable", "true");
+
+		// Step2: get Mail Session
+		getMailSession = Session.getDefaultInstance(mailServerProperties, null);
+		mailMessage = new MimeMessage(getMailSession);
+
+		mailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(email)); // Thay abc bằng địa
+																						// chỉ người nhận
+
+		// Bạn có thể chọn CC, BCC
+//	    generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("cc@gmail.com")); //Địa chỉ cc gmail
+
+		mailMessage.setSubject("Demo send gmail from Java");
+		mailMessage.setText("Demo send text by gmail from Java");
+
+		// Step3: Send mail
+		Transport transport = getMailSession.getTransport("smtp");
+
+		// Thay your_gmail thành gmail của bạn, thay your_password thành mật khẩu gmail
+		// của bạn
+		transport.connect("smtp.gmail.com", "nguyenanhtuyen10a5@gmail.com", "01677942718");
+		transport.sendMessage(mailMessage, mailMessage.getAllRecipients());
+		transport.close();
+	}
+
 }

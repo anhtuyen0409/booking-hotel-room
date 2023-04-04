@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import SpringProject.DAO.BookingDAO;
 import SpringProject.DAO.MenusDAO;
 import SpringProject.DAO.PostsDAO;
 import SpringProject.DAO.RoomsDAO;
@@ -12,6 +13,7 @@ import SpringProject.DAO.ServicesDAO;
 import SpringProject.DAO.SlidesDAO;
 import SpringProject.DAO.TypeRoomDAO;
 import SpringProject.DAO.UsersDAO;
+import SpringProject.Entity.Booking;
 import SpringProject.Entity.Menus;
 import SpringProject.Entity.Posts;
 import SpringProject.Entity.Rooms;
@@ -36,6 +38,8 @@ public class HomeAdminService implements IHomeAdmin {
 	private ServicesDAO servicesDao;
 	@Autowired
 	private UsersDAO usersDao;
+	@Autowired
+	private BookingDAO bookingDao;
 
 	public List<Posts> GetDataPosts() {
 		return postsDao.GetDataPosts();
@@ -63,6 +67,10 @@ public class HomeAdminService implements IHomeAdmin {
 
 	public List<Users> GetDataUsers() {
 		return usersDao.GetDataUsers();
+	}
+
+	public List<Booking> GetDataBooking() {
+		return bookingDao.GetDataBooking();
 	}
 
 }
