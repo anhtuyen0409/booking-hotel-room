@@ -1,4 +1,4 @@
-# booking-hotel-room
+# booking-hotel
 
 - Java
 - Spring MVC
